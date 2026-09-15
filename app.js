@@ -464,6 +464,7 @@ function renderConquerGrid() {
   app.innerHTML = `
     ${header({ back: "home", title: STRINGS.conquer.pageTitle })}
     <div class="view">
+      ${footerNav("conquer")}
       <div class="hero" style="padding-top:6px;">
         <span class="hero-emoji">🍊</span>
         <h1 style="font-size:20px;">${STRINGS.conquer.heroTitle}</h1>
@@ -483,6 +484,7 @@ function renderConquerGrid() {
           )
           .join("")}
       </div>
+      ${footerNav("conquer")}
     </div>
   `;
 }
