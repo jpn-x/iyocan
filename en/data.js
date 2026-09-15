@@ -191,6 +191,128 @@ const CATEGORIES = [
 ];
 
 /* ============================================================
+   2.5) 🍊 Explore Ehime! (deeper dive, centered on IYOCAN)
+   ============================================================ */
+const CONQUER_CONTEXT =
+  "I'm staying at IYOCAN, a guesthouse at 2293-1 Kamimitani, Iyo City, Ehime, Japan. I have a car. Please recommend things I can actually do in Ehime right now, as a traveler. ";
+
+const CONQUER_CATEGORIES = [
+  {
+    id: "eat",
+    emoji: "🍴",
+    title: "Food",
+    subtitle: "Find something delicious nearby",
+    color: "orange",
+    questions: [
+      {
+        label: "🐟 I want fresh Ehime seafood!",
+        prompt: `${CONQUER_CONTEXT}Please find restaurants within a realistic driving distance from IYOCAN (Iyo City, Matsumae, Matsuyama, Tobe, Toon, etc.) that serve Ehime/Seto Inland Sea-style seafood, sashimi, or local fish dishes — ideally places used by locals rather than chains. Include whether it's currently open, opening hours, distance and driving time from IYOCAN, budget, recommended dishes, review rating and review count, and parking availability where possible.`,
+      },
+      {
+        label: "🍣 I want great sushi!",
+        prompt: `${CONQUER_CONTEXT}Please find great sushi restaurants within a realistic driving distance from IYOCAN. Consider whether they use Ehime-style fish, how local the spot feels, its reputation as a sushi restaurant, price range, whether it's open for lunch or dinner, whether a reservation is needed, and whether it could realistically be visited same-day — don't focus only on high-end places. Include whether it's currently open, hours, distance, travel time, and review rating/count where possible.`,
+      },
+      {
+        label: "🐟 I want fresh sashimi!",
+        prompt: `${CONQUER_CONTEXT}I'd like casual, fresh local-fish sashimi rather than sushi — izakaya and seafood diners are fine too. Please search within a realistic driving distance from IYOCAN. Include whether it's currently open, hours, distance, travel time, budget, recommended dishes, review rating/count, and parking where possible.`,
+      },
+      {
+        label: "🍜 I want great ramen!",
+        prompt: `${CONQUER_CONTEXT}Please find ramen shops that are locally popular in Matsuyama/Ehime. Prefer shops with local character over chains. Include whether there's usually a line, opening hours, closed days, parking, budget, and popular menu items where possible, along with distance/travel time from IYOCAN and whether it's currently open.`,
+      },
+    ],
+  },
+  {
+    id: "popular",
+    emoji: "🏆",
+    title: "Chase What's Popular",
+    subtitle: "Go by lines and reviews",
+    color: "pink",
+    questions: [
+      {
+        label: "🔥 I want to try a place with a line out the door!",
+        prompt: `${CONQUER_CONTEXT}Within Ehime, especially within a realistic driving distance from IYOCAN, please find restaurants, dessert shops, local specialty food spots, or souvenir shops known for having lines or noticeable wait times — not just famous places, but ones that actually tend to have a queue. If possible, include: name, type of food, distance and driving time from IYOCAN, opening hours, budget, popular menu items, review rating and review count, the time of day lines tend to form, whether reservations are possible, and whether it's currently open. If you can't check real-time crowd levels, say so clearly, and don't present old information as current. If possible, also tell me which one is realistic to go to right now.`,
+      },
+      {
+        label: "🏆 Show me Ehime's most popular restaurant ranking!",
+        prompt: `${CONQUER_CONTEXT}Please give me a ranking of popular restaurants in Ehime, focused on places realistically reachable from IYOCAN. Rather than a simple fame-based ranking, weigh review rating, review count, popularity with locals, popularity with tourists, whether it's currently open, and how easy it is to reach from IYOCAN. If the ranking basis is fuzzy, make clear it's "an AI's overall recommended ranking."`,
+      },
+      {
+        label: "⭐ I want to know which places have great reviews!",
+        prompt: `${CONQUER_CONTEXT}Please show me places (any type — food or sightseeing) with great reviews, within a realistic distance from IYOCAN. Don't just rank a 5.0 rating with barely any reviews at the top — balance the rating against the review count. Include whether it's currently open, distance, and travel time where possible.`,
+      },
+    ],
+  },
+  {
+    id: "night",
+    emoji: "🌙",
+    title: "Enjoy the Night",
+    subtitle: "Local-feeling nightlife",
+    color: "blue",
+    questions: [
+      {
+        label: "🍺 I want a local-feeling izakaya!",
+        prompt: `${CONQUER_CONTEXT}Please find an izakaya with real Matsuyama/Ehime local character — not a chain. Consider whether it serves local dishes, local fish, jakoten (fish cake), and local sake, along with atmosphere, budget, opening hours, whether it's currently open, and whether reservations are needed. Since this involves drinking, please also mention taxis, designated-driver services, or public transport for getting back safely without driving.`,
+      },
+      {
+        label: "🍸 I want to drink at a local bar!",
+        prompt: `${CONQUER_CONTEXT}Please find a bar with local character that's still easy for a first-time visitor to walk into. Include atmosphere, pricing, opening hours, and how accessible it is from central Matsuyama. Since this involves drinking, please also mention how easy it is to get a taxi or designated-driver service back.`,
+      },
+      {
+        label: "🍷 I want to try a snack bar (Japanese-style hostess bar)!",
+        prompt: `${CONQUER_CONTEXT}Please find a "snack" bar (a small Japanese-style hostess bar) that's easy for a first-time visitor to walk into. If known, explain the pricing structure — set fee, cover charge, bottle service, or time-based pricing. If pricing is unclear, say so rather than guessing. Please don't recommend anything that suggests a shady or sexual-service-oriented establishment. Since this involves drinking, please also mention taxi or designated-driver options for getting back.`,
+      },
+      {
+        label: "🌃 I want to see a night view!",
+        prompt: `${CONQUER_CONTEXT}Please find a night-view spot that's realistically reachable by car from IYOCAN and safe to visit at night. Include parking availability, how easy it is to access at night, opening/visiting hours, and distance and travel time from IYOCAN where possible.`,
+      },
+    ],
+  },
+  {
+    id: "omiyage",
+    emoji: "🛍️",
+    title: "Souvenirs",
+    subtitle: "Something to bring home",
+    color: "yellow",
+    questions: [
+      {
+        label: "🍊 Where should I buy Ehime souvenirs?",
+        prompt: `${CONQUER_CONTEXT}Please find a shop that sells popular, easy-to-buy, distinctly-Ehime souvenirs. Include opening hours, parking availability, distance from IYOCAN, and whether it's easy to stop by on the way back. Please also suggest options suited for coworkers versus family, depending on the use case.`,
+      },
+      {
+        label: "🐟 I want to buy jakoten (fish cake)!",
+        prompt: `${CONQUER_CONTEXT}Please find a shop that sells jakoten (Ehime fish cake). Include whether you can eat it freshly fried on the spot, whether it's suited for takeout or as a souvenir, whether it's a popular shop, its opening hours, and parking availability where possible.`,
+      },
+      {
+        label: "🎁 I want a gift that coworkers or family will love!",
+        prompt: `${CONQUER_CONTEXT}Please find a good gift for coworkers (something individually wrapped and long-lasting, easy to share at work) and a separate gift idea for family. Include how distinctly Ehime it feels, price range, where to buy it, opening hours, and parking where possible.`,
+      },
+    ],
+  },
+  {
+    id: "michelin",
+    emoji: "⭐",
+    title: "Chase Ehime's Michelin Guide",
+    subtitle: "Take a peek at Ehime's Michelin-listed restaurants 🍣✨",
+    color: "gold",
+    questions: [
+      {
+        label: "⭐ I want to know Ehime's Michelin-starred restaurants!",
+        prompt: `${CONQUER_CONTEXT}Please tell me about Ehime's Michelin-starred restaurants. The 2018 edition is the most recently published Ehime-region Michelin guide, so treat star ratings as reflecting that 2018 assessment. Since a restaurant may have closed, moved, changed its name, or changed its business format since 2018, don't assume that being listed in 2018 means it's still operating today — always verify current operating status. Starred restaurants are often nearly impossible to book same-day, so please tell me: whether it's currently operating, whether it's open today, whether a reservation is required, the likelihood of getting a same-day reservation, whether walk-ins are possible, and a realistic way to actually visit. Don't present a hard-to-book restaurant as if it were easy to visit today — if visiting tonight seems unrealistic, please also suggest an easier-to-access alternative in the same style of cuisine. Treat this as more than just a booking search — it's also a fun way to discover what kind of notable restaurants exist in Ehime.`,
+      },
+      {
+        label: "🏆 I want to find a good-value Michelin Bib Gourmand pick!",
+        prompt: `${CONQUER_CONTEXT}Please tell me about Ehime's Michelin Bib Gourmand restaurants, focused on great value for money. The 2018 edition is the most recently published Ehime-region Michelin guide, so treat the listing as reflecting that 2018 assessment, and given the chance a restaurant has closed, moved, changed its name, or changed its business format since then, always verify current operating status. Include whether it's currently open, opening hours, budget, whether a reservation is needed, how realistic same-day access is, distance and driving time from IYOCAN, and review rating where possible.`,
+      },
+      {
+        label: "🍊 I want to browse Ehime's Michelin-listed restaurants!",
+        prompt: `${CONQUER_CONTEXT}I'd like to broadly explore Ehime's Michelin-listed restaurants (starred and Bib Gourmand included). The 2018 edition is the most recently published Ehime-region Michelin guide, so treat the listing as reflecting that 2018 assessment, and given the chance a restaurant has closed, moved, changed its name, or changed its business format since then, always verify current operating status. Please introduce a few across a range of cuisines and price points, and for each one include whether it's currently open, whether a reservation is needed, how realistic same-day access is, distance from IYOCAN, and review rating where possible.`,
+      },
+    ],
+  },
+];
+
+/* ============================================================
    3) 🌞 What Should I Do Today? (guided conditions -> one AI ask)
    ============================================================ */
 const TODAY_PLAN = {
@@ -394,6 +516,9 @@ const STRINGS = {
     helpSub: "Hospital, pharmacy, transport & more",
     contactTitle: "Contact the Host",
     contactSub: "Get in touch with Naoki",
+    conquerTitle: "🍊 Conquer Ehime!",
+    conquerSub: "From food and nightlife to souvenirs — ask AI anything you want to do in Ehime 🔥",
+    conquerBadge: "Featured",
     footerNote: "For guests who scanned the QR code 🍊",
   },
 
@@ -411,6 +536,13 @@ const STRINGS = {
     pageTitle: "Explore Ehime",
     heroTitle: "What should we do?",
     heroSub: "Tap anything you're curious about.",
+    categoryHeading: "Browse by category",
+  },
+
+  conquer: {
+    pageTitle: "Conquer Ehime!",
+    heroTitle: "What do you want to conquer?",
+    heroSub: "Pick a category and ask AI anything you're curious about.",
     categoryHeading: "Browse by category",
   },
 

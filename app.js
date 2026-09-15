@@ -36,6 +36,8 @@ function render() {
   if (parts[0] === "house" && parts[1]) return renderHouseDetail(parts[1]);
   if (parts[0] === "ehime" && !parts[1]) return renderEhimeGrid();
   if (parts[0] === "ehime" && parts[1]) return renderCategoryChips(parts[1]);
+  if (parts[0] === "conquer" && !parts[1]) return renderConquerGrid();
+  if (parts[0] === "conquer" && parts[1]) return renderConquerCategory(parts[1]);
   if (parts[0] === "today") return renderTodayForm();
   if (parts[0] === "help") return renderHelp();
   if (parts[0] === "contact") return renderContact();
@@ -278,6 +280,16 @@ function renderHome() {
         </button>
       </div>
 
+      <button class="conquer-card" onclick="navigate('conquer')">
+        <span class="card-badge">${STRINGS.home.conquerBadge}</span>
+        <span class="card-emoji">🍊</span>
+        <span class="card-text">
+          <span class="card-title">${STRINGS.home.conquerTitle}</span>
+          <span class="card-sub">${STRINGS.home.conquerSub}</span>
+        </span>
+        <span class="card-arrow">›</span>
+      </button>
+
       <div class="promo-card">
         <div class="promo-title">${CHATGPT_PROMO.title}</div>
         <p class="promo-lead">${CHATGPT_PROMO.lead}</p>
@@ -439,6 +451,59 @@ function renderCategoryChips(catId) {
 
 function sendToChatGPT(prompt) {
   openChatGPT(prompt);
+}
+
+/* ---------- 🍊 愛媛を攻め尽くす！ ---------- */
+function renderConquerGrid() {
+  app.innerHTML = `
+    ${header({ back: "home", title: STRINGS.conquer.pageTitle })}
+    <div class="view">
+      <div class="hero" style="padding-top:6px;">
+        <span class="hero-emoji">🍊</span>
+        <h1 style="font-size:20px;">${STRINGS.conquer.heroTitle}</h1>
+        <p>${STRINGS.conquer.heroSub}</p>
+      </div>
+
+      <div class="section-title">${STRINGS.conquer.categoryHeading}</div>
+      <div class="grid-2">
+        ${CONQUER_CATEGORIES.map(
+          (c) => `
+          <button class="tile c-${c.color}" onclick="navigate('conquer/${c.id}')">
+            <span class="tile-emoji">${c.emoji}</span>
+            <span class="tile-title">${c.title}</span>
+          </button>`
+        ).join("")}
+      </div>
+    </div>
+  `;
+}
+
+function renderConquerCategory(catId) {
+  const c = CONQUER_CATEGORIES.find((x) => x.id === catId);
+  if (!c) return renderConquerGrid();
+  app.innerHTML = `
+    ${header({ back: "conquer", title: c.title })}
+    <div class="view">
+      <div class="category-banner bg-${c.color}">
+        <span class="banner-emoji">${c.emoji}</span>
+        <div class="banner-title">${c.title}</div>
+        <div class="banner-sub">${c.subtitle}</div>
+      </div>
+
+      <div class="chip-list">
+        ${c.questions
+          .map(
+            (q, i) => `
+          <div class="chip-card">
+            <button class="chip-main" onclick='sendToChatGPT(${JSON.stringify(q.prompt)})'>${q.label}</button>
+            <button class="chip-copy" title="${STRINGS.chips.copyTitle}" onclick='copyText(${JSON.stringify(q.prompt)}, this)'>📋</button>
+          </div>`
+          )
+          .join("")}
+      </div>
+      <p class="footer-note">${STRINGS.chips.footerNote}</p>
+    </div>
+  `;
 }
 
 /* ---------- 🌞 今日どうする？ ---------- */

@@ -344,6 +344,74 @@ body::before {
   margin-top: 18px;
 }
 
+/* ---------- 🍊 愛媛を攻め尽くす！（トップページの特別入口） ---------- */
+.conquer-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  padding: 20px;
+  margin-top: 18px;
+  border-radius: var(--radius-lg);
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+  color: var(--white);
+  background: linear-gradient(135deg, var(--orange) 0%, var(--pink) 100%);
+  box-shadow: var(--shadow);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.15s ease;
+}
+
+.conquer-card:active {
+  transform: scale(0.98);
+}
+
+.conquer-card .card-badge {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  background: rgba(255, 255, 255, 0.28);
+  color: var(--white);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 20px;
+  letter-spacing: 0.02em;
+}
+
+.conquer-card .card-emoji {
+  font-size: 38px;
+  flex: none;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.12));
+}
+
+.conquer-card .card-text {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+.conquer-card .card-title {
+  font-weight: 800;
+  font-size: 18px;
+}
+
+.conquer-card .card-sub {
+  font-size: 13px;
+  opacity: 0.92;
+}
+
+.conquer-card .card-arrow {
+  margin-left: auto;
+  font-size: 20px;
+  flex: none;
+  opacity: 0.85;
+}
+
 .home-card {
   display: flex;
   align-items: center;
@@ -735,6 +803,7 @@ body::before {
 .tile.c-orange { background: var(--orange-soft); }
 .tile.c-blue { background: var(--blue-soft); }
 .tile.c-yellow { background: var(--yellow-soft); }
+.tile.c-gold { background: linear-gradient(135deg, #fff6d8, #ffe29a); }
 
 /* 今日どうする？の特別カード */
 .today-card {
@@ -849,6 +918,7 @@ body::before {
 .category-banner.bg-orange { background: linear-gradient(135deg, #ff9f5a, #ffca7a); }
 .category-banner.bg-blue { background: linear-gradient(135deg, #6fc3df, #9fdcee); }
 .category-banner.bg-yellow { background: linear-gradient(135deg, #ffca3a, #ffdd6e); color: var(--ink); }
+.category-banner.bg-gold { background: linear-gradient(135deg, #ffd93d, #ffb300); color: #5c3d00; }
 
 /* ---------- 施設詳細 ---------- */
 .detail-photo {
