@@ -185,6 +185,7 @@ function getFacilityModal() {
         <div class="facility-modal-divider"></div>
         <p class="facility-modal-line">TEL：${f.tel}</p>
         <p class="facility-modal-line">${f.managerLabel}：${f.managerName}</p>
+        <a class="facility-modal-contact" href="javascript:void(0)" onclick="closeFacilityModal();navigate('contact')">${f.contactLinkLabel}</a>
         <button class="facility-modal-close" onclick="closeFacilityModal()">${f.closeLabel}</button>
       </div>
     `;

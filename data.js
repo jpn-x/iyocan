@@ -503,6 +503,7 @@ const FACILITY_INFO = {
   tel: "090-5044-7799",
   managerLabel: "責任者",
   managerName: "村上 直樹",
+  contactLinkLabel: "📞 管理人に連絡する →",
   closeLabel: "閉じる",
 };
 
