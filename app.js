@@ -205,6 +205,7 @@ function renderHouseList() {
           </button>`
         ).join("")}
       </div>
+      ${footerNav("house")}
     </div>
   `;
 }
@@ -260,6 +261,7 @@ function renderEhimeGrid() {
           </button>`
         ).join("")}
       </div>
+      ${footerNav("ehime")}
     </div>
   `;
 }
@@ -391,6 +393,7 @@ function renderHelp() {
           </div>`
         ).join("")}
       </div>
+      ${footerNav("help")}
     </div>
   `;
 }
@@ -455,6 +458,7 @@ function renderContact() {
           <div class="link-card-url">🔗 issho.jreco.net</div>
         </div>
       </a>
+      ${footerNav("contact")}
     </div>
   `;
 }
