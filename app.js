@@ -393,9 +393,89 @@ function renderHouseList() {
   `;
 }
 
+function renderFacilityInfoDetail(f) {
+  const fi = FACILITY_INFO;
+  app.innerHTML = `
+    ${header({ back: "house", title: f.title })}
+    <div class="view">
+      <div class="facility-photo-grid">
+        ${fi.photos
+          .map(
+            (p) => `
+          <button class="facility-photo-tile" onclick='openLightbox(${JSON.stringify(p.src)}, ${JSON.stringify(p.alt)})'>
+            <img src="${p.src}" alt="${p.alt}" />
+          </button>`
+          )
+          .join("")}
+      </div>
+
+      <div class="section-title">${fi.accessTitle}</div>
+
+      <div class="info-block">
+        <div class="info-block-label">${fi.addressSectionTitle}</div>
+        <button class="facility-modal-address" onclick='copyText(${JSON.stringify(fi.addressCopy)}, this)'>${fi.addressText}</button>
+        <p class="info-block-en">${fi.addressTextEn}</p>
+        <a class="facility-modal-maps" href="${fi.mapsUrl}" target="_blank" rel="noopener" style="justify-content:flex-start;">${fi.mapsLabel}</a>
+      </div>
+
+      <div class="info-block">
+        <div class="info-block-label">${fi.accessSectionTitle}</div>
+        ${fi.access
+          .map(
+            (a) => `
+          <div class="access-row">
+            <div class="access-row-main">
+              <span class="access-icon">${a.icon}</span>
+              <span class="access-text">
+                <span class="access-title">${a.label}</span>
+                <span class="access-desc">${a.text}</span>
+                <span class="access-desc-en">${a.textEn}</span>
+              </span>
+            </div>
+            <a class="access-route-link" href="${a.routeUrl}" target="_blank" rel="noopener">${fi.routeLinkLabel}</a>
+          </div>`
+          )
+          .join("")}
+      </div>
+
+      <div class="info-block">
+        <div class="info-block-label">${fi.parkingSectionTitle}</div>
+        <p class="parking-text">${fi.parkingIcon} ${fi.parkingText}</p>
+        <p class="info-block-en">${fi.parkingTextEn}</p>
+      </div>
+
+      <div class="section-title">${fi.wifiSectionTitle}</div>
+      <div class="info-block">
+        <div class="wifi-password-row">
+          <span class="wifi-password-label">${fi.wifiSsidLabel}</span>
+          <span class="wifi-password-value">${wifiFacility.ssid}</span>
+          <button class="wifi-password-copy" onclick='copyText(${JSON.stringify(wifiFacility.ssid)}, this)'>${STRINGS.house.wifiCopyLabel}</button>
+        </div>
+        <div class="wifi-password-row">
+          <span class="wifi-password-label">${STRINGS.house.wifiPasswordLabel}</span>
+          <span class="wifi-password-value">${wifiFacility.password}</span>
+          <button class="wifi-password-copy" onclick='copyText(${JSON.stringify(wifiFacility.password)}, this)'>${STRINGS.house.wifiCopyLabel}</button>
+        </div>
+        <a class="info-block-link" href="javascript:void(0)" onclick="navigate('house/wifi')">${fi.wifiGoLabel}</a>
+      </div>
+
+      <div class="section-title">${fi.contactSectionTitle}</div>
+      <div class="info-block">
+        <p class="parking-text">${MANAGER.message}</p>
+        <a class="cta-btn line-cta-btn" href="${MANAGER.lineUrl}" target="_blank" rel="noopener">${STRINGS.contact.lineCtaLabel}</a>
+        <a class="info-block-link" href="javascript:void(0)" onclick="navigate('contact')">${fi.contactGoLabel}</a>
+      </div>
+    </div>
+  `;
+}
+
 function renderHouseDetail(id) {
   const f = FACILITIES.find((x) => x.id === id);
   if (!f) return renderHouseList();
+
+  if (id === "info" && typeof FACILITY_INFO !== "undefined") {
+    return renderFacilityInfoDetail(f);
+  }
 
   const bodyHtml = f.image
     ? `

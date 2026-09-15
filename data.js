@@ -50,6 +50,7 @@ const FACILITIES = [
 
 const wifiFacility = FACILITIES.find((f) => f.id === "wifi");
 wifiFacility.image = "assets/wifi-card.jpg";
+wifiFacility.ssid = "TP-Link_4694";
 wifiFacility.password = "71521725";
 wifiFacility.note =
   "📶 画像のQRコードをスマホのカメラで読み取るだけで、かんたんにWi-Fiに接続できます！";
@@ -494,9 +495,10 @@ const FACILITY_INFO = {
   name: "IYOCAN",
   subtitle: "-いよ館-（民泊宿）",
   certLabel: "届出情報　第 M380048635 号",
-  addressText: "〒799-3104 愛媛県伊予市上三谷2293-1",
-  addressCopy: "愛媛県伊予市上三谷2293-1",
-  mapsUrl: "https://maps.app.goo.gl/87zv9unWTfdiuVfo9",
+  addressText: "〒799-3104 愛媛県伊予市上三谷甲2293-1",
+  addressTextEn: "2293-1 Kamimitani, Iyo, Ehime 799-3104",
+  addressCopy: "愛媛県伊予市上三谷甲2293-1",
+  mapsUrl: "https://maps.app.goo.gl/pcmU5xZKk1jy7u5i6",
   mapsLabel: "📍 Google Mapsで見る",
   instagramUrl: "https://www.instagram.com/iiyo_can/",
   instagramLabel: "📷 Instagram",
@@ -505,6 +507,50 @@ const FACILITY_INFO = {
   managerLabel: "責任者",
   managerName: "村上 直樹",
   contactLinkLabel: "📞 管理人に連絡する",
+
+  photos: [
+    { src: "assets/house-front.jpg", alt: "IYOCAN外観（正面）" },
+    { src: "assets/house-exterior.jpg", alt: "IYOCAN外観（空撮）" },
+    { src: "assets/house-parking.jpg", alt: "駐車場（参考図）" },
+  ],
+  accessTitle: "📍 施設情報・アクセス",
+  addressSectionTitle: "住所",
+  accessSectionTitle: "アクセス",
+  access: [
+    {
+      icon: "🚗",
+      label: "高速道路",
+      text: "松山自動車道「伊予IC」から車で約10分（約6km）",
+      textEn: "Approx. 10 min drive from Matsuyama Expwy 'Iyo IC' (6 km)",
+      routeUrl: "https://maps.app.goo.gl/ztQaKqacB1kT3iFM8",
+    },
+    {
+      icon: "✈️",
+      label: "空港から",
+      text: "松山空港から車で約20分（松山外環状道路経由 / 約12km）",
+      textEn: "Approx. 20 min drive from Matsuyama Airport (12 km)",
+      routeUrl: "https://maps.app.goo.gl/H9NKy7WrgyAvVBxh6",
+    },
+    {
+      icon: "🚃",
+      label: "最寄り駅",
+      text: "JR予讃線「南伊予駅」から車・タクシーで約3〜4分（徒歩約20分 / 約1.5km）",
+      textEn: "Approx. 3-4 min by taxi from JR Minami-Iyo Station (20 min walk / 1.5 km)",
+      routeUrl: "https://maps.app.goo.gl/9SPnq9nmrpz3QXa47",
+    },
+  ],
+  routeLinkLabel: "🗺️ ルートを見る",
+  parkingSectionTitle: "駐車場",
+  parkingIcon: "🅿️",
+  parkingText: "無料駐車場あり。広い敷地なので大型車や複数台でも気にせずゆったり停められます🍊",
+  parkingTextEn: "Free on-site parking. Very spacious, easy to park large cars or multiple vehicles!",
+
+  wifiSectionTitle: "📶 Wi-Fi情報",
+  wifiSsidLabel: "SSID",
+  wifiGoLabel: "Wi-Fiページを開く（QRコードあり）",
+
+  contactSectionTitle: "📞 管理人に連絡",
+  contactGoLabel: "連絡先の詳細を見る",
 };
 
 /* ============================================================

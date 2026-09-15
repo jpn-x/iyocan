@@ -1120,6 +1120,139 @@ body::before {
   padding: 12px;
 }
 
+/* ---------- 施設情報・アクセス（#house/info専用レイアウト） ---------- */
+.facility-photo-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin: 18px 0 8px;
+}
+
+.facility-photo-tile {
+  border: none;
+  padding: 0;
+  margin: 0;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  aspect-ratio: 4 / 3;
+  cursor: pointer;
+}
+
+.facility-photo-tile img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.facility-photo-tile:active {
+  transform: scale(0.97);
+}
+
+.info-block {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-soft);
+  padding: 14px 16px;
+  margin-bottom: 14px;
+}
+
+.info-block-label {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--ink-soft);
+  margin-bottom: 6px;
+}
+
+.info-block-en {
+  font-size: 11.5px;
+  color: var(--ink-soft);
+  line-height: 1.5;
+  margin: 2px 0 0;
+}
+
+.info-block-link {
+  display: block;
+  text-align: center;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--orange);
+  text-decoration: none;
+  margin-top: 4px;
+}
+
+.info-block .wifi-password-row {
+  background: var(--cream);
+  box-shadow: none;
+}
+
+.info-block .wifi-password-row + .wifi-password-row {
+  margin-top: 8px;
+}
+
+.access-row {
+  padding: 10px 0;
+  border-top: 1px solid rgba(74, 59, 59, 0.1);
+}
+
+.access-row:first-of-type {
+  border-top: none;
+  padding-top: 2px;
+}
+
+.access-row-main {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.access-icon {
+  font-size: 20px;
+  flex: none;
+  line-height: 1.3;
+}
+
+.access-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.access-title {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.access-desc {
+  font-size: 12.5px;
+  color: var(--ink);
+  line-height: 1.5;
+}
+
+.access-desc-en {
+  font-size: 11px;
+  color: var(--ink-soft);
+  line-height: 1.4;
+}
+
+.access-route-link {
+  display: inline-block;
+  margin: 6px 0 0 30px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--orange);
+  text-decoration: none;
+}
+
+.parking-text {
+  font-size: 13px;
+  color: var(--ink);
+  line-height: 1.6;
+  margin: 0;
+}
+
 /* ---------- 設備詳細：実コンテンツ（Wi-Fiなど） ---------- */
 .facility-photo {
   display: block;
