@@ -539,7 +539,7 @@ const STRINGS = {
     helpSub: "病院・薬局・交通など",
     contactTitle: "管理人に連絡",
     contactSub: "お宿の事で困ったら連絡してね🍊",
-    conquerTitle: "🍊 愛媛を攻め尽くす！",
+    conquerTitle: "愛媛を攻め尽くす！",
     conquerSub: "愛媛のミシュラン掲載店もチェック！食べる・遊ぶ・夜・お土産まで、愛媛でやりたいことをAIに聞いてみよう🔥",
     conquerBadge: "注目",
     footerNote: "🍊 ようこそ愛媛・伊予市 お宿IYOCANへ 🍊",
