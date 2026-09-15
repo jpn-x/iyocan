@@ -516,8 +516,8 @@ function renderHouseDetail(id) {
 
   const bodyHtml = f.image
     ? `
-      <img src="${f.image}" alt="${f.title}" class="facility-photo" />
-      ${f.note ? `<p class="facility-note">${f.note}</p>` : ""}
+      <img src="${f.image}" alt="${f.title}" class="facility-photo" onclick="navigate('house')" />
+      ${f.note ? `<p class="facility-note" onclick="navigate('house')">${f.note}</p>` : ""}
       ${
         f.password
           ? `

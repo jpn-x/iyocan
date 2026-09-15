@@ -1297,6 +1297,7 @@ body::before {
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-soft);
   margin: 18px 0 14px;
+  cursor: pointer;
 }
 
 .facility-note {
