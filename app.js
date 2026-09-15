@@ -483,7 +483,13 @@ function renderContact() {
         </div>
       </div>
 
-      <button class="cert-btn" onclick='openLightbox(${JSON.stringify(CERTIFICATE.image)}, ${JSON.stringify(STRINGS.contact.altCertificate)})'>${STRINGS.contact.certButtonLabel}</button>
+      <button class="cert-btn" onclick='openLightbox(${JSON.stringify(CERTIFICATE.image)}, ${JSON.stringify(STRINGS.contact.altCertificate)})'>
+        <span class="cert-btn-emoji">📄</span>
+        <span class="cert-btn-text">
+          <span class="cert-btn-label">${STRINGS.contact.certButtonLabel}</span>
+          <span class="cert-btn-number">${STRINGS.contact.certButtonNumber}</span>
+        </span>
+      </button>
 
       <div class="section-title">${STRINGS.contact.docSectionTitle}</div>
       <p class="section-desc">${ISSHO_CARD.note}</p>

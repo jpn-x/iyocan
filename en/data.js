@@ -359,7 +359,8 @@ const STRINGS = {
     altLineQr: "LINE QR code",
     companyLinkLabel: "About the operating company",
     companyLinkUrl: "https://search.jreco.net/company",
-    certButtonLabel: "🪪 View Lodging Business Certificate",
+    certButtonLabel: "View Lodging Business Certificate",
+    certButtonNumber: "Notification No. M380048635",
     altCertificate: "Certified Private Lodging Business notification",
   },
 

@@ -918,19 +918,41 @@ body::after {
 .cert-btn {
   display: flex;
   align-items: center;
-  justify-content: center;
+  gap: 12px;
   width: 100%;
-  padding: 12px 14px;
+  padding: 14px 16px;
   border: none;
-  border-radius: 20px;
+  border-radius: var(--radius-md);
   background: var(--white);
   box-shadow: var(--shadow-soft);
   color: var(--ink);
   font-family: inherit;
-  font-weight: 700;
-  font-size: 13px;
+  text-align: left;
   cursor: pointer;
   margin: 6px 0 22px;
+}
+
+.cert-btn-emoji {
+  flex: none;
+  font-size: 22px;
+}
+
+.cert-btn-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.cert-btn-label {
+  font-weight: 700;
+  font-size: 13.5px;
+}
+
+.cert-btn-number {
+  font-weight: 500;
+  font-size: 11.5px;
+  color: var(--ink-soft);
 }
 
 .cert-btn:active {

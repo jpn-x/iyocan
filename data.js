@@ -357,7 +357,8 @@ const STRINGS = {
     altLineQr: "LINE QRコード",
     companyLinkLabel: "運営会社について",
     companyLinkUrl: "https://search.jreco.net/company",
-    certButtonLabel: "🪪 民泊届出済証明書を見る",
+    certButtonLabel: "民泊届出済証明書を見る",
+    certButtonNumber: "届出番号　第 M380048635 号",
     altCertificate: "住宅宿泊事業（民泊）届出済証明書",
   },
 
