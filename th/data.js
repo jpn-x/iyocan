@@ -522,6 +522,9 @@ const STRINGS = {
     footerNote: "🍊 ยินดีต้อนรับสู่ IYOCAN เกสต์เฮาส์ในเมืองอิโย จังหวัดเอฮิเมะ 🍊",
     addressText: "2293-1 Kamimitani, Iyo City, Ehime 799-3104, ประเทศญี่ปุ่น",
     businessLine: "IYOCAN -いよ館- (Minpaku Lodging) by NEVER LAND",
+    shareText: "🍊 IYOCAN GUIDE｜เที่ยวเอฮิเมะให้สนุก!",
+    shareX: "🐦 แชร์ลง X",
+    copyUrl: "🔗 คัดลอกลิงก์",
   },
 
   house: {

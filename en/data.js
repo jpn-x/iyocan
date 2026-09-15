@@ -525,6 +525,9 @@ const STRINGS = {
     footerNote: "🍊 Welcome to IYOCAN, a guesthouse in Iyo City, Ehime 🍊",
     addressText: "2293-1 Kamimitani, Iyo City, Ehime 799-3104, Japan",
     businessLine: "IYOCAN -いよ館- (Minpaku Lodging) by NEVER LAND",
+    shareText: "🍊 IYOCAN GUIDE — Enjoy your trip to Ehime!",
+    shareX: "🐦 Share on X",
+    copyUrl: "🔗 Copy URL",
   },
 
   house: {

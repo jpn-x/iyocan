@@ -525,6 +525,9 @@ const STRINGS = {
     footerNote: "🍊 欢迎来到爱媛县伊予市的民宿IYOCAN 🍊",
     addressText: "日本爱媛县伊予市上三谷2293-1（邮编799-3104）",
     businessLine: "IYOCAN -いよ館- (民宿) by NEVER LAND",
+    shareText: "🍊 IYOCAN GUIDE｜爱媛之旅，尽情享受！",
+    shareX: "🐦 分享到X",
+    copyUrl: "🔗 复制链接",
   },
 
   house: {

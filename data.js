@@ -523,6 +523,9 @@ const STRINGS = {
     footerNote: "🍊 ようこそ愛媛・伊予市 お宿IYOCANへ 🍊",
     addressText: "〒799-3104 愛媛県伊予市上三谷2293-1",
     businessLine: "IYOCAN -いよ館- (民泊宿) by NEVER LAND",
+    shareText: "🍊 IYOCAN GUIDE｜愛媛の旅、楽しもう！",
+    shareX: "🐦 Xでシェア",
+    copyUrl: "🔗 URLコピー",
   },
 
   house: {

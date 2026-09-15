@@ -314,6 +314,11 @@ function renderHome() {
       <a class="footer-note" href="#home" onclick="event.preventDefault();window.scrollTo({top:0,behavior:'smooth'})">${STRINGS.home.footerNote}</a>
       <a class="company-link" href="https://maps.app.goo.gl/n9Fxooypt67uuJhM7" target="_blank" rel="noopener">${STRINGS.home.addressText}</a>
       <p class="footer-credit">${STRINGS.home.businessLine}</p>
+
+      <div class="share-row">
+        <a class="share-chip" href="https://twitter.com/intent/tweet?url=${encodeURIComponent(location.origin + location.pathname)}&text=${encodeURIComponent(STRINGS.home.shareText)}" target="_blank" rel="noopener">${STRINGS.home.shareX}</a>
+        <button class="share-chip" onclick='copyText(location.origin + location.pathname, this)'>${STRINGS.home.copyUrl}</button>
+      </div>
     </div>
   `;
 }
