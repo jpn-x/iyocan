@@ -139,9 +139,9 @@ body::before {
 }
 
 .logo-link .logo-icon {
-  width: 24px;
-  height: 24px;
-  border-radius: 6px;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
   flex: none;
 }
 

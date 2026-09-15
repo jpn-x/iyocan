@@ -522,7 +522,7 @@ const STRINGS = {
     helpSub: "Hospital, pharmacy, transport & more",
     contactTitle: "Contact the Host",
     contactSub: "If anything's wrong with the stay, just reach out 🍊",
-    conquerTitle: "🍊 Conquer Ehime!",
+    conquerTitle: "Conquer Ehime!",
     conquerSub: "Check out Ehime's Michelin-listed restaurants too! From food and nightlife to souvenirs — ask AI anything you want to do in Ehime 🔥",
     conquerBadge: "Featured",
     footerNote: "🍊 Welcome to IYOCAN, a guesthouse in Iyo City, Ehime 🍊",

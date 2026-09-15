@@ -49,7 +49,7 @@ function header({ back = null, title = null } = {}) {
   return `
     <div class="top-header">
       ${back ? `<button class="back-btn" onclick="navigate('${back}')">←</button>` : ""}
-      <a class="logo-link" href="#home" onclick="event.preventDefault();navigate('home')">
+      <a class="logo-link" href="#home" onclick="event.preventDefault();goHomeOrScroll()">
         <img class="logo-icon" src="${SITE_ICON}" alt="" />${title ? "" : STRINGS.siteName}
       </a>
       ${
@@ -57,7 +57,7 @@ function header({ back = null, title = null } = {}) {
           ? `<a class="header-title" href="#home" onclick="event.preventDefault();navigate('home')">${title}</a>`
           : ""
       }
-      <a class="top-link" href="#home" onclick="event.preventDefault();navigate('home')">${STRINGS.topLink}</a>
+      <a class="top-link" href="#home" onclick="event.preventDefault();goHomeOrScroll()">${STRINGS.topLink}</a>
       ${typeof FACILITY_INFO !== "undefined" ? `<button class="facility-link" onclick="openFacilityModal()">${STRINGS.facilityChip}</button>` : ""}
       <button class="lang-switch" onclick="openLangModal()">${STRINGS.langSwitch.label}</button>
     </div>
@@ -271,6 +271,7 @@ function renderHome() {
   app.innerHTML = `
     ${header()}
     <div class="view">
+      ${footerNav("home")}
       <div class="hero">
         <img class="hero-icon" src="${HOME_HERO_ICON}" alt="IYOCAN" ${typeof FACILITY_INFO !== "undefined" ? `onclick="openFacilityModal()"` : ""} />
         <h1>${STRINGS.home.title}</h1>
