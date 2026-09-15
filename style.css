@@ -172,6 +172,70 @@ body::after {
   padding: 18px 8px 22px;
 }
 
+/* ---------- いよ館の使い方：背景ループ動画ヒーロー（試験実装） ---------- */
+.house-hero-video {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin: 8px 0 18px;
+  box-shadow: var(--shadow);
+  background: var(--cream);
+}
+
+.house-hero-video-el {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.house-hero-video-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(20, 12, 8, 0.12) 0%, rgba(20, 12, 8, 0.48) 100%);
+}
+
+.house-hero-video-text {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 16px;
+}
+
+.house-hero-video-text .hero-emoji {
+  font-size: 38px;
+  display: block;
+  margin-bottom: 4px;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.35));
+}
+
+.house-hero-video-text h1 {
+  color: var(--white);
+  margin: 2px 0 4px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+}
+
+.house-hero-video-text p {
+  color: rgba(255, 255, 255, 0.92);
+  margin: 0;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
+}
+
+@media (min-width: 600px) {
+  .house-hero-video {
+    height: 300px;
+  }
+}
+
 .hero-emoji {
   font-size: 44px;
   display: block;

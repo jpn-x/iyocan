@@ -219,10 +219,16 @@ function renderHouseList() {
     ${header({ back: "home", title: STRINGS.house.pageTitle })}
     <div class="view">
       ${footerNav("house")}
-      <div class="hero" style="padding-top:6px;">
-        <span class="hero-emoji">🏠</span>
-        <h1 style="font-size:20px;">${STRINGS.house.heroTitle}</h1>
-        <p>${STRINGS.house.heroSub}</p>
+      <div class="house-hero-video">
+        <video class="house-hero-video-el" autoplay loop muted playsinline>
+          <source src="assets/house-loop.mp4" type="video/mp4" />
+        </video>
+        <div class="house-hero-video-overlay"></div>
+        <div class="house-hero-video-text">
+          <span class="hero-emoji">🏠</span>
+          <h1 style="font-size:20px;">${STRINGS.house.heroTitle}</h1>
+          <p>${STRINGS.house.heroSub}</p>
+        </div>
       </div>
       <div class="grid-2">
         ${FACILITIES.map(
