@@ -81,12 +81,15 @@ body::before {
   display: flex;
   align-items: center;
   gap: 8px;
-  padding: 16px 20px 10px;
+  padding: 12px 16px;
+  margin: 10px 14px 0;
   position: sticky;
-  top: 0;
+  top: 10px;
   z-index: 20;
-  background: rgba(255, 248, 239, 0.85);
+  border-radius: var(--radius-lg);
+  background: rgba(255, 248, 239, 0.9);
   backdrop-filter: blur(6px);
+  box-shadow: var(--shadow-soft);
 }
 
 .lang-switch,
@@ -285,12 +288,53 @@ body::before {
   font-size: 13.5px;
 }
 
+/* ---------- クイックリンクチップ（本領発揮 / Wi-Fi） ---------- */
+.quick-links-row {
+  display: flex;
+  gap: 10px;
+  margin: 0 0 18px;
+}
+
+.quick-link-btn {
+  flex: 1;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  padding: 12px 10px;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 13px;
+  white-space: nowrap;
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.15s ease;
+}
+
+.quick-link-btn:active {
+  transform: scale(0.96);
+}
+
+.quick-link-btn.ql-promo {
+  background: linear-gradient(135deg, #fff6d8 0%, #ffd93d 55%, #ffb300 100%);
+  color: #5c3d00;
+  border: 2px solid #ffefb8;
+}
+
+.quick-link-btn.ql-wifi {
+  background: var(--white);
+  color: var(--ink);
+  border: 2px solid var(--blue-soft);
+}
+
 /* ---------- ホームの3大カード ---------- */
 .home-cards {
   display: flex;
   flex-direction: column;
   gap: 16px;
   margin-top: 8px;
+}
+
+.home-cards-bottom {
+  margin-top: 18px;
 }
 
 .home-card {

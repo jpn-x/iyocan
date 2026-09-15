@@ -101,6 +101,11 @@ function openChatGPT(prompt) {
   window.open(url, "_blank", "noopener");
 }
 
+function scrollToPromo() {
+  const el = document.querySelector(".promo-card");
+  if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
 function getLightbox() {
   let lb = document.querySelector(".lightbox");
   if (!lb) {
@@ -170,6 +175,11 @@ function renderHome() {
         <p>${STRINGS.home.subtitle}</p>
       </div>
 
+      <div class="quick-links-row">
+        <button class="quick-link-btn ql-promo" onclick="scrollToPromo()">${STRINGS.home.qlPromo}</button>
+        <button class="quick-link-btn ql-wifi" onclick="navigate('house/wifi')">${STRINGS.home.qlWifi}</button>
+      </div>
+
       <div class="home-cards">
         <button class="home-card main" onclick="navigate('today')">
           <span class="card-badge">${STRINGS.home.mainBadge}</span>
@@ -207,15 +217,6 @@ function renderHome() {
           </span>
           <span class="card-arrow">›</span>
         </button>
-
-        <button class="home-card contact" onclick="navigate('contact')">
-          <span class="card-emoji">📞</span>
-          <span class="card-text">
-            <span class="card-title">${STRINGS.home.contactTitle}</span>
-            <span class="card-sub">${STRINGS.home.contactSub}</span>
-          </span>
-          <span class="card-arrow">›</span>
-        </button>
       </div>
 
       <div class="promo-card">
@@ -226,6 +227,17 @@ function renderHome() {
           <a class="promo-btn ios" href="${CHATGPT_PROMO.ios.url}" target="_blank" rel="noopener">${CHATGPT_PROMO.ios.label}</a>
           <a class="promo-btn android" href="${CHATGPT_PROMO.android.url}" target="_blank" rel="noopener">${CHATGPT_PROMO.android.label}</a>
         </div>
+      </div>
+
+      <div class="home-cards home-cards-bottom">
+        <button class="home-card contact" onclick="navigate('contact')">
+          <span class="card-emoji">📞</span>
+          <span class="card-text">
+            <span class="card-title">${STRINGS.home.contactTitle}</span>
+            <span class="card-sub">${STRINGS.home.contactSub}</span>
+          </span>
+          <span class="card-arrow">›</span>
+        </button>
       </div>
 
       <p class="footer-note">${STRINGS.home.footerNote}</p>

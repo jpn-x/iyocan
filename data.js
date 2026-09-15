@@ -374,6 +374,8 @@ const STRINGS = {
     title: "いよ館 GUIDE",
     subtitle: "愛媛の旅、楽しもう！",
     mainBadge: "メイン",
+    qlPromo: "🤖 本領発揮する",
+    qlWifi: "📶 Wi-Fiを接続",
     houseTitle: "いよ館の使い方",
     houseSub: "宿のことはこちら",
     ehimeTitle: "愛媛を楽しむ",
