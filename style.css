@@ -312,10 +312,21 @@ body::after {
 }
 
 .home-card.main {
-  background: linear-gradient(135deg, var(--pink) 0%, var(--orange) 100%);
-  color: var(--white);
+  background: linear-gradient(135deg, #fff6d8 0%, #ffd93d 55%, #ffb300 100%);
+  border: 2px solid #ffefb8;
+  color: #5c3d00;
   padding: 24px 20px;
   animation: cardGoldGlow 2.4s ease-in-out infinite;
+}
+
+.home-card.main .card-badge {
+  background: rgba(92, 61, 0, 0.14);
+  color: #5c3d00;
+}
+
+.home-card.main .card-arrow {
+  color: #5c3d00;
+  opacity: 0.55;
 }
 
 .home-card.main::after {
