@@ -518,6 +518,7 @@ const STRINGS = {
     conquerSub: "กิน เที่ยวกลางคืน ของฝาก ครบทุกอย่างที่อยากทำในเอฮิเมะ ลองถาม AI ดูสิ🔥",
     conquerBadge: "แนะนำ",
     footerNote: "🍊 ยินดีต้อนรับสู่ IYOCAN เกสต์เฮาส์ในเมืองอิโย จังหวัดเอฮิเมะ 🍊",
+    addressText: "2293-1 Kamimitani, Iyo City, Ehime 799-3104, ประเทศญี่ปุ่น",
   },
 
   house: {

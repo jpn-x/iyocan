@@ -312,6 +312,7 @@ function renderHome() {
       </div>
 
       <a class="footer-note" href="#home" onclick="event.preventDefault();window.scrollTo({top:0,behavior:'smooth'})">${STRINGS.home.footerNote}</a>
+      <a class="company-link" href="https://maps.app.goo.gl/n9Fxooypt67uuJhM7" target="_blank" rel="noopener">${STRINGS.home.addressText}</a>
     </div>
   `;
 }

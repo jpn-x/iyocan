@@ -519,6 +519,7 @@ const STRINGS = {
     conquerSub: "먹고, 즐기고, 밤과 기념품까지 — 에히메에서 하고 싶은 걸 AI에게 물어보세요🔥",
     conquerBadge: "추천",
     footerNote: "🍊 에히메현 이요시의 게스트하우스 IYOCAN에 오신 것을 환영합니다 🍊",
+    addressText: "일본 에히메현 이요시 카미미타니 2293-1 (우편번호 799-3104)",
   },
 
   house: {

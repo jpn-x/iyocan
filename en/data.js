@@ -520,6 +520,7 @@ const STRINGS = {
     conquerSub: "From food and nightlife to souvenirs — ask AI anything you want to do in Ehime 🔥",
     conquerBadge: "Featured",
     footerNote: "🍊 Welcome to IYOCAN, a guesthouse in Iyo City, Ehime 🍊",
+    addressText: "2293-1 Kamimitani, Iyo City, Ehime 799-3104, Japan",
   },
 
   house: {
