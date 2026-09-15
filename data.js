@@ -326,6 +326,8 @@ const MANAGER = {
   sns: [
     { id: "x", emoji: "𝕏", label: "@cadillac600", url: "https://x.com/cadillac600" },
     { id: "instagram", emoji: "📷", label: "Instagram", url: "https://www.instagram.com/cadillac600/?hl=ja" },
+    { id: "tiktok", emoji: "🎵", label: "TikTok", url: "https://www.tiktok.com/@murayan800" },
+    { id: "youtube", emoji: "▶️", label: "YouTube", url: "https://www.youtube.com/@cadillac600" },
   ],
 };
 
@@ -340,6 +342,17 @@ const ISSHO_CARD = {
 
 const CERTIFICATE = {
   image: "assets/certificate.png",
+};
+
+/* ============================================================
+   トップページ：ChatGPTアプリ案内カード
+   ============================================================ */
+const CHATGPT_PROMO = {
+  title: "🤖 ChatGPTを入れて、本領発揮！",
+  lead: "このGUIDEは、ChatGPTと一緒に使うともっと便利🍊<br/>「愛媛を楽しむ」や「困ったとき」の質問をタップすると、質問内容がセットされた状態でChatGPTが開きます。",
+  note: "📱 まだChatGPTアプリを入れていない方は、先に入れておいてね。せっかくなのでAIの便利さを体験してみてください✨",
+  ios: { label: "🍎 iPhoneで入れる", url: "https://apps.apple.com/app/chatgpt/id6448311069" },
+  android: { label: "🤖 Androidで入れる", url: "https://play.google.com/store/apps/details?id=com.openai.chatgpt" },
 };
 
 /* ============================================================

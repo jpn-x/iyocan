@@ -329,6 +329,8 @@ const MANAGER = {
   sns: [
     { id: "x", emoji: "𝕏", label: "@cadillac600", url: "https://x.com/cadillac600" },
     { id: "instagram", emoji: "📷", label: "Instagram", url: "https://www.instagram.com/cadillac600/?hl=ja" },
+    { id: "tiktok", emoji: "🎵", label: "TikTok", url: "https://www.tiktok.com/@murayan800" },
+    { id: "youtube", emoji: "▶️", label: "YouTube", url: "https://www.youtube.com/@cadillac600" },
   ],
 };
 
@@ -343,6 +345,17 @@ const ISSHO_CARD = {
 
 const CERTIFICATE = {
   image: "../assets/certificate.png",
+};
+
+/* ============================================================
+   Home page: ChatGPT app promo card
+   ============================================================ */
+const CHATGPT_PROMO = {
+  title: "🤖 Get ChatGPT and unlock the full experience!",
+  lead: "This guide works even better together with ChatGPT.<br/>Tap any question in \"Explore Ehime\" or \"Need Help?\" and ChatGPT opens with your question already filled in.",
+  note: "📱 Don't have the app yet? Grab it first, then come back and give it a try ✨",
+  ios: { label: "🍎 Get it on iPhone", url: "https://apps.apple.com/app/chatgpt/id6448311069" },
+  android: { label: "🤖 Get it on Android", url: "https://play.google.com/store/apps/details?id=com.openai.chatgpt" },
 };
 
 /* ============================================================

@@ -962,7 +962,8 @@ body::after {
 }
 
 .sns-row {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 10px;
 }
 
