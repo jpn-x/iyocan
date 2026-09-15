@@ -351,14 +351,29 @@ function renderHome() {
         </button>
       </div>
 
-      <a class="footer-note" href="#home" onclick="event.preventDefault();window.scrollTo({top:0,behavior:'smooth'})">${STRINGS.home.footerNote}</a>
-      <a class="company-link" href="https://maps.app.goo.gl/n9Fxooypt67uuJhM7" target="_blank" rel="noopener">${STRINGS.home.addressText}</a>
-      <p class="footer-credit">${STRINGS.home.businessLine}</p>
+      ${siteFooter()}
+    </div>
+  `;
+}
 
-      <div class="share-row">
-        <a class="share-chip" href="https://twitter.com/intent/tweet?url=${encodeURIComponent(location.origin + location.pathname)}&text=${encodeURIComponent(STRINGS.home.shareText)}" target="_blank" rel="noopener">${STRINGS.home.shareX}</a>
-        <button class="share-chip" onclick='copyText(location.origin + location.pathname, this)'>${STRINGS.home.copyUrl}</button>
-      </div>
+function goHomeOrScroll() {
+  const route = currentRoute().split("/")[0] || "home";
+  if (route === "home") {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  } else {
+    navigate("home");
+  }
+}
+
+function siteFooter() {
+  return `
+    <a class="footer-note" href="#home" onclick="event.preventDefault();goHomeOrScroll()">${STRINGS.home.footerNote}</a>
+    <a class="company-link" href="https://maps.app.goo.gl/n9Fxooypt67uuJhM7" target="_blank" rel="noopener">${STRINGS.home.addressText}</a>
+    <p class="footer-credit">${STRINGS.home.businessLine}</p>
+
+    <div class="share-row">
+      <a class="share-chip" href="https://twitter.com/intent/tweet?url=${encodeURIComponent(location.origin + location.pathname)}&text=${encodeURIComponent(STRINGS.home.shareText)}" target="_blank" rel="noopener">${STRINGS.home.shareX}</a>
+      <button class="share-chip" onclick='copyText(location.origin + location.pathname, this)'>${STRINGS.home.copyUrl}</button>
     </div>
   `;
 }
@@ -389,6 +404,7 @@ function renderHouseList() {
         ).join("")}
       </div>
       ${footerNav("house")}
+      ${siteFooter()}
     </div>
   `;
 }
@@ -425,6 +441,9 @@ function renderFacilityInfoDetail(f) {
             </span>
           </div>
           <a class="access-route-link" href="${fi.mapsUrl}" target="_blank" rel="noopener">${fi.mapsLabel}</a>
+        </div>
+        <div class="map-embed">
+          <iframe src="https://www.google.com/maps?q=${encodeURIComponent(fi.addressCopy)}&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen title="${fi.addressSectionTitle}"></iframe>
         </div>
       </div>
 
@@ -466,7 +485,6 @@ function renderFacilityInfoDetail(f) {
         <div class="wifi-password-row">
           <span class="wifi-password-label">${fi.wifiSsidLabel}</span>
           <span class="wifi-password-value">${wifiFacility.ssid}</span>
-          <button class="wifi-password-copy" onclick='copyText(${JSON.stringify(wifiFacility.ssid)}, this)'>${STRINGS.house.wifiCopyLabel}</button>
         </div>
         <div class="wifi-password-row">
           <span class="wifi-password-label">${STRINGS.house.wifiPasswordLabel}</span>
@@ -482,6 +500,7 @@ function renderFacilityInfoDetail(f) {
         <a class="cta-btn line-cta-btn" href="${MANAGER.lineUrl}" target="_blank" rel="noopener">${STRINGS.contact.lineCtaLabel}</a>
         <a class="info-block-link" href="javascript:void(0)" onclick="navigate('contact')">${fi.contactGoLabel}</a>
       </div>
+      ${siteFooter()}
     </div>
   `;
 }
@@ -524,6 +543,7 @@ function renderHouseDetail(id) {
     ${header({ back: "house", title: f.title })}
     <div class="view">
       ${bodyHtml}
+      ${siteFooter()}
     </div>
   `;
 }
@@ -560,6 +580,7 @@ function renderEhimeGrid() {
         ).join("")}
       </div>
       ${footerNav("ehime")}
+      ${siteFooter()}
     </div>
   `;
 }
@@ -588,6 +609,7 @@ function renderCategoryChips(catId) {
           .join("")}
       </div>
       <p class="footer-note">${STRINGS.chips.footerNote}</p>
+      ${siteFooter()}
     </div>
   `;
 }
@@ -622,6 +644,7 @@ function renderConquerGrid() {
           .join("")}
       </div>
       ${footerNav("conquer")}
+      ${siteFooter()}
     </div>
   `;
 }
@@ -650,6 +673,7 @@ function renderConquerCategory(catId) {
           .join("")}
       </div>
       <p class="footer-note">${STRINGS.chips.footerNote}</p>
+      ${siteFooter()}
     </div>
   `;
 }
@@ -686,6 +710,7 @@ function renderTodayForm() {
       <div class="sticky-cta">
         <button class="cta-btn" onclick="submitTodayForm()">${STRINGS.today.ctaLabel}</button>
       </div>
+      ${siteFooter()}
     </div>
   `;
 }
@@ -780,6 +805,7 @@ function renderHelp() {
       </div>
       <p class="footer-note">${STRINGS.chips.footerNote}</p>
       ${footerNav("help")}
+      ${siteFooter()}
     </div>
   `;
 }
@@ -861,6 +887,7 @@ function renderContact() {
       </a>
       ${footerNav("contact")}
       <a class="company-link" href="${STRINGS.contact.companyLinkUrl}" target="_blank" rel="noopener">${STRINGS.contact.companyLinkLabel}</a>
+      ${siteFooter()}
     </div>
   `;
 }
