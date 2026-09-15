@@ -61,12 +61,6 @@ body::after {
   position: fixed;
   inset: 0;
   z-index: -1;
-  background: linear-gradient(
-    180deg,
-    rgba(255, 248, 239, 0.86) 0%,
-    rgba(255, 240, 244, 0.82) 45%,
-    rgba(238, 248, 252, 0.88) 100%
-  );
 }
 
 #app {
