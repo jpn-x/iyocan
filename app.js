@@ -267,9 +267,22 @@ function renderHouseList() {
 function renderHouseDetail(id) {
   const f = FACILITIES.find((x) => x.id === id);
   if (!f) return renderHouseList();
-  app.innerHTML = `
-    ${header({ back: "house", title: f.title })}
-    <div class="view">
+
+  const bodyHtml = f.image
+    ? `
+      <img src="${f.image}" alt="${f.title}" class="facility-photo" />
+      ${f.note ? `<p class="facility-note">${f.note}</p>` : ""}
+      ${
+        f.password
+          ? `
+        <div class="wifi-password-row">
+          <span class="wifi-password-label">${STRINGS.house.wifiPasswordLabel}</span>
+          <span class="wifi-password-value">${f.password}</span>
+          <button class="wifi-password-copy" onclick='copyText(${JSON.stringify(f.password)}, this)'>${STRINGS.house.wifiCopyLabel}</button>
+        </div>`
+          : ""
+      }`
+    : `
       <div class="detail-photo">${STRINGS.house.photoPlaceholder}</div>
       <ol class="step-list" style="list-style:none;padding:0;">
         ${f.steps
@@ -279,7 +292,12 @@ function renderHouseDetail(id) {
           )
           .join("")}
       </ol>
-      <div class="owner-note">${STRINGS.house.ownerNote}</div>
+      <div class="owner-note">${STRINGS.house.ownerNote}</div>`;
+
+  app.innerHTML = `
+    ${header({ back: "house", title: f.title })}
+    <div class="view">
+      ${bodyHtml}
     </div>
   `;
 }

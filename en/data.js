@@ -46,6 +46,12 @@ const FACILITIES = [
   note: "",
 }));
 
+const wifiFacility = FACILITIES.find((f) => f.id === "wifi");
+wifiFacility.image = "../assets/wifi-card.jpg";
+wifiFacility.password = "71521725";
+wifiFacility.note =
+  "📶 Just scan the QR code in the image with your phone's camera to connect instantly!";
+
 /* ============================================================
    2) 🤖 Explore Ehime (question chips for AI)
    ============================================================ */
@@ -387,6 +393,8 @@ const STRINGS = {
     heroSub: "Tap what you'd like to know",
     photoPlaceholder: "📷 Photo coming soon",
     ownerNote: "✏️ The host will add details and photos here",
+    wifiPasswordLabel: "Password",
+    wifiCopyLabel: "📋 Copy",
   },
 
   ehime: {
@@ -442,7 +450,7 @@ const STRINGS = {
   },
 
   toast: {
-    copied: "Question copied 📋",
+    copied: "Copied 📋",
     copyFailed: "Couldn't copy",
   },
 };

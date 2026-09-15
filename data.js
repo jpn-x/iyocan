@@ -45,6 +45,12 @@ const FACILITIES = [
   note: "",
 }));
 
+const wifiFacility = FACILITIES.find((f) => f.id === "wifi");
+wifiFacility.image = "assets/wifi-card.jpg";
+wifiFacility.password = "71521725";
+wifiFacility.note =
+  "📶 画像のQRコードをスマホのカメラで読み取るだけで、かんたんにWi-Fiに接続できます！";
+
 /* ============================================================
    2) 🤖 愛媛を楽しむ（AIへの質問チップ集）
    ============================================================ */
@@ -385,6 +391,8 @@ const STRINGS = {
     heroSub: "気になる項目をタップしてね",
     photoPlaceholder: "📷 ここに写真を追加してください",
     ownerNote: "✏️ ここにオーナーが説明文・写真・注意点を追加できます",
+    wifiPasswordLabel: "パスワード",
+    wifiCopyLabel: "📋 コピー",
   },
 
   ehime: {
@@ -440,7 +448,7 @@ const STRINGS = {
   },
 
   toast: {
-    copied: "質問をコピーしました📋",
+    copied: "コピーしました📋",
     copyFailed: "コピーできませんでした",
   },
 };
