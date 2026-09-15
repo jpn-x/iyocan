@@ -559,7 +559,7 @@ function renderContact() {
     <div class="view">
       ${footerNav("contact")}
       <div class="contact-hero">
-        <img src="${MANAGER.photo}" alt="${STRINGS.contact.altManager}" class="contact-photo" />
+        <img src="${MANAGER.photo}" alt="${STRINGS.contact.altManager}" class="contact-photo" onclick="this.classList.toggle('zoomed')" />
         <p class="contact-message">${MANAGER.message}</p>
       </div>
 
