@@ -36,11 +36,37 @@ body {
 body {
   font-family: "M PLUS Rounded 1c", "Hiragino Maru Gothic ProN", "BIZ UDPGothic",
     "Yu Gothic", "Meiryo", sans-serif;
-  background: linear-gradient(180deg, #fff8ef 0%, #fff0f4 40%, #eef8fc 100%);
-  background-attachment: fixed;
+  background: #fff3ea;
   color: var(--ink);
   -webkit-font-smoothing: antialiased;
   min-height: 100vh;
+  position: relative;
+}
+
+/* 背景写真（下灘駅・夕日）。position:fixedの疑似要素でビューポート基準にすることで、
+   ページが長くてもcoverが正しく効き、iOSでもスクロール時にガクつかない。 */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-image: url("assets/bg-sunset.jpg");
+  background-size: cover;
+  background-position: center 30%;
+  background-repeat: no-repeat;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 248, 239, 0.86) 0%,
+    rgba(255, 240, 244, 0.82) 45%,
+    rgba(238, 248, 252, 0.88) 100%
+  );
 }
 
 #app {
@@ -210,6 +236,11 @@ body {
 .home-card.help {
   background: var(--white);
   border: 2px solid var(--yellow-soft);
+}
+
+.home-card.contact {
+  background: var(--white);
+  border: 2px solid var(--pink-soft);
 }
 
 .home-card .card-emoji {

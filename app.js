@@ -169,6 +169,15 @@ function renderHome() {
           </span>
           <span class="card-arrow">›</span>
         </button>
+
+        <button class="home-card contact" onclick="navigate('contact')">
+          <span class="card-emoji">📞</span>
+          <span class="card-text">
+            <span class="card-title">管理人に連絡</span>
+            <span class="card-sub">村上直樹に連絡してみる</span>
+          </span>
+          <span class="card-arrow">›</span>
+        </button>
       </div>
 
       <p class="footer-note">QRコードからこのページを開いたあなたへ 🍊</p>
