@@ -140,7 +140,8 @@ function renderHome() {
       </div>
 
       <div class="home-cards">
-        <button class="home-card house" onclick="navigate('house')">
+        <button class="home-card main" onclick="navigate('house')">
+          <span class="card-badge">メイン</span>
           <span class="card-emoji">🏠</span>
           <span class="card-text">
             <span class="card-title">いよ館の使い方</span>
@@ -149,8 +150,7 @@ function renderHome() {
           <span class="card-arrow">›</span>
         </button>
 
-        <button class="home-card main" onclick="navigate('ehime')">
-          <span class="card-badge">メイン</span>
+        <button class="home-card house" onclick="navigate('ehime')">
           <span class="card-emoji">🤖</span>
           <span class="card-text">
             <span class="card-title">愛媛を楽しむ</span>
