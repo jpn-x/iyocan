@@ -4,6 +4,8 @@
    เนื้อหาภาษาไทยได้โดยไม่ต้องแก้ app.js (ใช้ร่วมกับ JP/EN/ZH/KO)
    ============================================================ */
 
+const HOME_HERO_ICON = "../assets/house-icon.png";
+
 const LOCATION_CONTEXT =
   "ฉันพักอยู่ที่ 'IYOCAN' ซึ่งเป็นเกสต์เฮาส์ในคามิมิทานิ เมืองอิโย จังหวัดเอฮิเมะ ประเทศญี่ปุ่น ";
 
@@ -519,6 +521,7 @@ const STRINGS = {
     conquerBadge: "แนะนำ",
     footerNote: "🍊 ยินดีต้อนรับสู่ IYOCAN เกสต์เฮาส์ในเมืองอิโย จังหวัดเอฮิเมะ 🍊",
     addressText: "2293-1 Kamimitani, Iyo City, Ehime 799-3104, ประเทศญี่ปุ่น",
+    businessLine: "IYOCAN -いよ館- (Minpaku Lodging) by NEVER LAND",
   },
 
   house: {

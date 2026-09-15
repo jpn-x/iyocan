@@ -231,7 +231,7 @@ function renderHome() {
     ${header()}
     <div class="view">
       <div class="hero">
-        <span class="hero-emoji">🍊</span>
+        <img class="hero-icon" src="${HOME_HERO_ICON}" alt="IYOCAN" />
         <h1>${STRINGS.home.title}</h1>
         <p>${STRINGS.home.subtitle}</p>
       </div>
@@ -313,6 +313,7 @@ function renderHome() {
 
       <a class="footer-note" href="#home" onclick="event.preventDefault();window.scrollTo({top:0,behavior:'smooth'})">${STRINGS.home.footerNote}</a>
       <a class="company-link" href="https://maps.app.goo.gl/n9Fxooypt67uuJhM7" target="_blank" rel="noopener">${STRINGS.home.addressText}</a>
+      <p class="footer-credit">${STRINGS.home.businessLine}</p>
     </div>
   `;
 }

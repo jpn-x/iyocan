@@ -262,6 +262,15 @@ body::before {
   margin-bottom: 6px;
 }
 
+.hero-icon {
+  display: block;
+  width: 190px;
+  max-width: 60%;
+  height: auto;
+  margin: 0 auto 8px;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.25));
+}
+
 .hero h1 {
   font-size: 24px;
   margin: 0 0 6px;
@@ -1214,6 +1223,14 @@ body::before {
   text-shadow: 0 1px 6px rgba(0, 0, 0, 0.24);
   text-decoration: underline;
   text-underline-offset: 2px;
+}
+
+.footer-credit {
+  text-align: center;
+  margin: 6px 0 0;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.6);
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.24);
 }
 
 /* ---------- ページ下部の移動カード（3枚横並び） ---------- */

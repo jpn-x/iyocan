@@ -3,6 +3,9 @@
    ここを編集すれば、画面(app.js)を触らなくても内容を更新できます。
    ============================================================ */
 
+/* トップページのヒーロー画像 */
+const HOME_HERO_ICON = "assets/house-icon.png";
+
 /* ChatGPTへ渡す質問文の「共通の前置き」 */
 const LOCATION_CONTEXT =
   "愛媛県伊予市上三谷にある民泊『IYOCAN』に宿泊しています。";
@@ -519,6 +522,7 @@ const STRINGS = {
     conquerBadge: "注目",
     footerNote: "🍊 ようこそ愛媛・伊予市 お宿IYOCANへ 🍊",
     addressText: "〒799-3104 愛媛県伊予市上三谷2293-1",
+    businessLine: "IYOCAN -いよ館- (民泊宿) by NEVER LAND",
   },
 
   house: {

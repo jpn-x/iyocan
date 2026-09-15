@@ -4,6 +4,9 @@
    English copy without touching app.js (shared with the JP site).
    ============================================================ */
 
+/* Hero image on the home page */
+const HOME_HERO_ICON = "../assets/house-icon.png";
+
 /* Shared context sentence prepended to every ChatGPT prompt */
 const LOCATION_CONTEXT =
   "I'm staying at IYOCAN, a guesthouse in Kamimitani, Iyo City, Ehime, Japan. ";
@@ -521,6 +524,7 @@ const STRINGS = {
     conquerBadge: "Featured",
     footerNote: "🍊 Welcome to IYOCAN, a guesthouse in Iyo City, Ehime 🍊",
     addressText: "2293-1 Kamimitani, Iyo City, Ehime 799-3104, Japan",
+    businessLine: "IYOCAN -いよ館- (Minpaku Lodging) by NEVER LAND",
   },
 
   house: {

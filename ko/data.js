@@ -5,6 +5,8 @@
    업데이트할 수 있습니다.
    ============================================================ */
 
+const HOME_HERO_ICON = "../assets/house-icon.png";
+
 const LOCATION_CONTEXT =
   "저는 일본 에히메현 이요시 카미미타니에 있는 게스트하우스 'IYOCAN'에 머물고 있습니다. ";
 
@@ -520,6 +522,7 @@ const STRINGS = {
     conquerBadge: "추천",
     footerNote: "🍊 에히메현 이요시의 게스트하우스 IYOCAN에 오신 것을 환영합니다 🍊",
     addressText: "일본 에히메현 이요시 카미미타니 2293-1 (우편번호 799-3104)",
+    businessLine: "IYOCAN -いよ館- (Minpaku Lodging) by NEVER LAND",
   },
 
   house: {

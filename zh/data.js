@@ -4,6 +4,9 @@
    无需改动 app.js（JP/EN/ZH 共用）。
    ============================================================ */
 
+/* 首页顶部的图标 */
+const HOME_HERO_ICON = "../assets/house-icon.png";
+
 /* 附加在每个ChatGPT提问前的共同开头 */
 const LOCATION_CONTEXT =
   "我正住在爱媛县伊予市上三谷的民宿『IYOCAN』。";
@@ -521,6 +524,7 @@ const STRINGS = {
     conquerBadge: "精选",
     footerNote: "🍊 欢迎来到爱媛县伊予市的民宿IYOCAN 🍊",
     addressText: "日本爱媛县伊予市上三谷2293-1（邮编799-3104）",
+    businessLine: "IYOCAN -いよ館- (民宿) by NEVER LAND",
   },
 
   house: {
