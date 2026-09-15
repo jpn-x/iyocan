@@ -498,6 +498,8 @@ const FACILITY_INFO = {
   addressCopy: "愛媛県伊予市上三谷2293-1",
   mapsUrl: "https://maps.app.goo.gl/87zv9unWTfdiuVfo9",
   mapsLabel: "📍 Google Mapsで見る",
+  instagramUrl: "https://www.instagram.com/iiyo_can/",
+  instagramLabel: "📷 Instagram",
   tel: "090-5044-7799",
   managerLabel: "責任者",
   managerName: "村上 直樹",

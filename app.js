@@ -181,6 +181,7 @@ function getFacilityModal() {
         <a class="facility-modal-cert" href="javascript:void(0)" onclick='openLightbox(${JSON.stringify(CERTIFICATE.image)}, ${JSON.stringify(STRINGS.contact.altCertificate)})'>📄 ${f.certLabel}</a>
         <button class="facility-modal-address" onclick='copyText(${JSON.stringify(f.addressCopy)}, this)'>${f.addressText}</button>
         <a class="facility-modal-maps" href="${f.mapsUrl}" target="_blank" rel="noopener">${f.mapsLabel}</a>
+        <a class="facility-modal-maps" href="${f.instagramUrl}" target="_blank" rel="noopener">${f.instagramLabel}</a>
         <div class="facility-modal-divider"></div>
         <p class="facility-modal-line">TEL：${f.tel}</p>
         <p class="facility-modal-line">${f.managerLabel}：${f.managerName}</p>
