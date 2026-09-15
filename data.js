@@ -518,7 +518,7 @@ const STRINGS = {
     contactTitle: "管理人に連絡",
     contactSub: "お宿の事で困ったら連絡してね🍊",
     conquerTitle: "🍊 愛媛を攻め尽くす！",
-    conquerSub: "食べる・遊ぶ・夜・お土産まで、愛媛でやりたいことをAIに聞いてみよう🔥",
+    conquerSub: "愛媛のミシュラン掲載店もチェック！食べる・遊ぶ・夜・お土産まで、愛媛でやりたいことをAIに聞いてみよう🔥",
     conquerBadge: "注目",
     footerNote: "🍊 ようこそ愛媛・伊予市 お宿IYOCANへ 🍊",
     addressText: "〒799-3104 愛媛県伊予市上三谷2293-1",

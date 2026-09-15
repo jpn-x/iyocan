@@ -518,7 +518,7 @@ const STRINGS = {
     contactTitle: "관리자에게 연락하기",
     contactSub: "숙소에 문제가 있으면 언제든 연락하세요🍊",
     conquerTitle: "🍊 에히메 완전정복!",
-    conquerSub: "먹고, 즐기고, 밤과 기념품까지 — 에히메에서 하고 싶은 걸 AI에게 물어보세요🔥",
+    conquerSub: "에히메의 미쉐린 맛집도 확인해보세요! 먹고, 즐기고, 밤과 기념품까지 — 에히메에서 하고 싶은 걸 AI에게 물어보세요🔥",
     conquerBadge: "추천",
     footerNote: "🍊 에히메현 이요시의 게스트하우스 IYOCAN에 오신 것을 환영합니다 🍊",
     addressText: "일본 에히메현 이요시 카미미타니 2293-1 (우편번호 799-3104)",

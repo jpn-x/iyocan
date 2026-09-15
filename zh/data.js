@@ -520,7 +520,7 @@ const STRINGS = {
     contactTitle: "联系管理员",
     contactSub: "住宿有任何问题都可以联系我们🍊",
     conquerTitle: "🍊 玩转爱媛！",
-    conquerSub: "吃喝玩乐到伴手礼，想做的事都能问AI🔥",
+    conquerSub: "还能查看爱媛的米其林餐厅！吃喝玩乐到伴手礼，想做的事都能问AI🔥",
     conquerBadge: "精选",
     footerNote: "🍊 欢迎来到爱媛县伊予市的民宿IYOCAN 🍊",
     addressText: "日本爱媛县伊予市上三谷2293-1（邮编799-3104）",
