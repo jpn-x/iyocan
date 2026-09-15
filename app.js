@@ -178,6 +178,7 @@ function getFacilityModal() {
       <div class="facility-modal-card">
         <div class="facility-modal-title">${f.name}</div>
         <div class="facility-modal-sub">${f.subtitle}</div>
+        <a class="facility-modal-cert" href="javascript:void(0)" onclick='openLightbox(${JSON.stringify(CERTIFICATE.image)}, ${JSON.stringify(STRINGS.contact.altCertificate)})'>📄 ${f.certLabel}</a>
         <p class="facility-modal-address">${f.addressText}</p>
         <a class="facility-modal-maps" href="${f.mapsUrl}" target="_blank" rel="noopener">${f.mapsLabel}</a>
         <div class="facility-modal-divider"></div>

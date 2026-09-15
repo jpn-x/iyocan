@@ -493,6 +493,7 @@ const CHATGPT_PROMO = {
 const FACILITY_INFO = {
   name: "IYOCAN",
   subtitle: "-いよ館-（民泊宿）",
+  certLabel: "届出情報　第 M380048635 号",
   addressText: "〒799-3104 愛媛県伊予市上三谷2293-1",
   mapsUrl: "https://maps.app.goo.gl/87zv9unWTfdiuVfo9",
   mapsLabel: "📍 Google Mapsで見る",

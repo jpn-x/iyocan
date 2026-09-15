@@ -799,7 +799,22 @@ body::before {
   font-size: 13px;
   color: var(--ink-soft);
   font-weight: 700;
-  margin: 2px 0 12px;
+  margin: 2px 0 8px;
+}
+
+.facility-modal-cert {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--orange);
+  text-decoration: underline;
+  margin: 0 0 12px;
+}
+
+.facility-modal-cert:active {
+  transform: scale(0.97);
 }
 
 .facility-modal-address {
