@@ -330,7 +330,6 @@ function renderHouseList() {
         </video>
         <div class="house-hero-video-overlay"></div>
         <div class="house-hero-video-text">
-          <span class="hero-emoji">🏠</span>
           <h1 style="font-size:20px;">${STRINGS.house.heroTitle}</h1>
           <p>${STRINGS.house.heroSub}</p>
         </div>
