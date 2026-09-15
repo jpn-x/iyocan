@@ -280,6 +280,10 @@ const ISSHO_CARD = {
   image: "assets/issho-card.jpg",
 };
 
+const CERTIFICATE = {
+  image: "assets/certificate.png",
+};
+
 /* ============================================================
    6) 画面まわりの共通文言（日本語版）
    app.js はこの STRINGS を参照するだけで、日英で完全に共有できます。
@@ -353,6 +357,8 @@ const STRINGS = {
     altLineQr: "LINE QRコード",
     companyLinkLabel: "運営会社について",
     companyLinkUrl: "https://search.jreco.net/company",
+    certButtonLabel: "🪪 民泊届出済証明書を見る",
+    altCertificate: "住宅宿泊事業（民泊）届出済証明書",
   },
 
   nav: {

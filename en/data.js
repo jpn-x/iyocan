@@ -283,6 +283,10 @@ const ISSHO_CARD = {
   image: "../assets/issho-card.jpg",
 };
 
+const CERTIFICATE = {
+  image: "../assets/certificate.png",
+};
+
 /* ============================================================
    6) Screen copy (English)
    ============================================================ */
@@ -355,6 +359,8 @@ const STRINGS = {
     altLineQr: "LINE QR code",
     companyLinkLabel: "About the operating company",
     companyLinkUrl: "https://search.jreco.net/company",
+    certButtonLabel: "🪪 View Lodging Business Certificate",
+    altCertificate: "Certified Private Lodging Business notification",
   },
 
   nav: {

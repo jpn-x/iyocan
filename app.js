@@ -100,6 +100,33 @@ function openChatGPT(prompt) {
   window.open(url, "_blank", "noopener");
 }
 
+function getLightbox() {
+  let lb = document.querySelector(".lightbox");
+  if (!lb) {
+    lb = document.createElement("div");
+    lb.className = "lightbox";
+    lb.innerHTML = `<button class="lightbox-close" onclick="closeLightbox()">✕</button><img class="lightbox-img" alt="" />`;
+    lb.addEventListener("click", (e) => {
+      if (e.target === lb) closeLightbox();
+    });
+    document.body.appendChild(lb);
+  }
+  return lb;
+}
+
+function openLightbox(src, alt) {
+  const lb = getLightbox();
+  const img = lb.querySelector(".lightbox-img");
+  img.src = src;
+  img.alt = alt || "";
+  lb.classList.add("show");
+}
+
+function closeLightbox() {
+  const lb = document.querySelector(".lightbox");
+  if (lb) lb.classList.remove("show");
+}
+
 function copyText(text, btnEl) {
   const done = () => {
     toast(STRINGS.toast.copied);
@@ -455,6 +482,8 @@ function renderContact() {
           <img src="${MANAGER.lineQr}" alt="${STRINGS.contact.altLineQr}" class="line-qr-img is-secondary" />
         </div>
       </div>
+
+      <button class="cert-btn" onclick='openLightbox(${JSON.stringify(CERTIFICATE.image)}, ${JSON.stringify(STRINGS.contact.altCertificate)})'>${STRINGS.contact.certButtonLabel}</button>
 
       <div class="section-title">${STRINGS.contact.docSectionTitle}</div>
       <p class="section-desc">${ISSHO_CARD.note}</p>
