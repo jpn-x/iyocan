@@ -1,7 +1,7 @@
 {
-  "name": "いよ館 GUIDE",
-  "short_name": "いよ館GUIDE",
-  "description": "愛媛の旅コンシェルジュ｜いよ館 宿泊者専用ガイド",
+  "name": "IYOCAN GUIDE",
+  "short_name": "IYOCAN GUIDE",
+  "description": "愛媛の旅コンシェルジュ｜IYOCAN 宿泊者専用ガイド",
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#fff8ef",

@@ -1,11 +1,11 @@
 /* ============================================================
-   いよ館 GUIDE - コンテンツデータ
+   IYOCAN GUIDE - コンテンツデータ
    ここを編集すれば、画面(app.js)を触らなくても内容を更新できます。
    ============================================================ */
 
 /* ChatGPTへ渡す質問文の「共通の前置き」 */
 const LOCATION_CONTEXT =
-  "愛媛県伊予市上三谷にある民泊『いよ館』に宿泊しています。";
+  "愛媛県伊予市上三谷にある民泊『IYOCAN』に宿泊しています。";
 
 /* よく使う「締めの一文」テンプレート */
 const TAIL = {
@@ -22,7 +22,7 @@ const TAIL = {
 };
 
 /* ============================================================
-   1) 🏠 いよ館の使い方（AIを使わない・宿の正式情報）
+   1) 🏠 IYOCANの使い方（AIを使わない・宿の正式情報）
    Phase1では「型」だけ用意。実際の文章・写真はオーナーが後から追加。
    ============================================================ */
 const FACILITIES = [
@@ -82,7 +82,7 @@ const CATEGORIES = [
     questions: [
       { label: "🏆 人気の温泉TOP5", prompt: `${LOCATION_CONTEXT}今から車で行ける範囲で、人気の温泉TOP5を教えてください。${TAIL.onsen}` },
       { label: "⭐ 口コミ評価が高い温泉は？", prompt: `${LOCATION_CONTEXT}今から車で行ける範囲で、口コミ評価が高い温泉を教えてください。${TAIL.onsen}` },
-      { label: "🚗 いよ館から行きやすい温泉", prompt: `${LOCATION_CONTEXT}宿から車でできるだけ近い、行きやすい温泉を教えてください。${TAIL.onsen}` },
+      { label: "🚗 IYOCANから行きやすい温泉", prompt: `${LOCATION_CONTEXT}宿から車でできるだけ近い、行きやすい温泉を教えてください。${TAIL.onsen}` },
       { label: "🌅 景色がいい温泉に入りたい", prompt: `${LOCATION_CONTEXT}今から車で行ける範囲で、景色がいい温泉を教えてください。${TAIL.onsen}` },
       { label: "👨‍👩‍👧 家族で入りやすい温泉", prompt: `${LOCATION_CONTEXT}今から車で行ける範囲で、小さい子どもも一緒に家族で入りやすい温泉を教えてください。${TAIL.onsen}` },
     ],
@@ -180,7 +180,7 @@ const CATEGORIES = [
     subtitle: "気持ちいい道を走ろう",
     color: "orange",
     questions: [
-      { label: "🚗 おすすめドライブコース", prompt: `${LOCATION_CONTEXT}いよ館を起点にしたおすすめのドライブコースを教えてください。${TAIL.drive}` },
+      { label: "🚗 おすすめドライブコース", prompt: `${LOCATION_CONTEXT}IYOCANを起点にしたおすすめのドライブコースを教えてください。${TAIL.drive}` },
       { label: "🌄 絶景ドライブがしたい", prompt: `${LOCATION_CONTEXT}景色がきれいな絶景ドライブコースを教えてください。${TAIL.drive}` },
       { label: "🌊 海沿いドライブがしたい", prompt: `${LOCATION_CONTEXT}海沿いを走れるドライブコースを教えてください。${TAIL.drive}` },
       { label: "🕐 半日ドライブがしたい", prompt: `${LOCATION_CONTEXT}半日で回れるドライブコースを教えてください。${TAIL.drive}` },
@@ -243,7 +243,7 @@ function buildTodayPrompt(answers) {
    4) 🆘 困ったとき（施設を並べるのではなく、住所込みの質問をChatGPTに渡す）
    ============================================================ */
 const SOS_CONTEXT =
-  "私は現在、愛媛県伊予市上三谷2293-1にある『いよ館（IYOCAN）』に宿泊しています。";
+  "私は現在、愛媛県伊予市上三谷2293-1にある『IYOCAN』に宿泊しています。";
 
 const HELP_ITEMS = [
   {
@@ -314,7 +314,7 @@ const HELP_ITEMS = [
     emoji: "🆘",
     title: "その他",
     sub: "困っていることをChatGPTに相談したい",
-    prompt: `${SOS_CONTEXT}今、困っていることがあります。現在地を『いよ館』として、私が困っている状況を解決するために必要な情報や、近くで利用できる施設・サービスを教えてください。必要に応じて現在営業中かどうかも確認してください。`,
+    prompt: `${SOS_CONTEXT}今、困っていることがあります。現在地を『IYOCAN』として、私が困っている状況を解決するために必要な情報や、近くで利用できる施設・サービスを教えてください。必要に応じて現在営業中かどうかも確認してください。`,
   },
 ];
 
@@ -366,17 +366,17 @@ const CHATGPT_PROMO = {
    app.js はこの STRINGS を参照するだけで、日英で完全に共有できます。
    ============================================================ */
 const STRINGS = {
-  siteName: "いよ館 GUIDE",
+  siteName: "IYOCAN GUIDE",
   topLink: "トップ",
   langSwitch: { label: "🇬🇧 English", href: "en/" },
 
   home: {
-    title: "いよ館 GUIDE",
+    title: "IYOCAN GUIDE",
     subtitle: "愛媛の旅、楽しもう！",
     mainBadge: "メイン",
     qlPromo: "🤖 AIで本領発揮する",
     qlWifi: "📶 Wi-Fiを接続",
-    houseTitle: "いよ館の使い方",
+    houseTitle: "IYOCANの使い方",
     houseSub: "宿のことはこちら",
     ehimeTitle: "愛媛を楽しむ",
     ehimeSub: "気になることをAIに聞いてみよう！",
@@ -388,7 +388,7 @@ const STRINGS = {
   },
 
   house: {
-    pageTitle: "いよ館の使い方",
+    pageTitle: "IYOCANの使い方",
     heroTitle: "宿のことはこちら",
     heroSub: "気になる項目をタップしてね",
     photoPlaceholder: "📷 ここに写真を追加してください",
@@ -443,7 +443,7 @@ const STRINGS = {
   },
 
   nav: {
-    house: "いよ館の使い方",
+    house: "IYOCANの使い方",
     ehime: "愛媛を楽しむ",
     help: "困ったとき",
     contact: "管理人に連絡",
