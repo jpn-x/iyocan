@@ -468,13 +468,16 @@ function renderConquerGrid() {
 
       <div class="section-title">${STRINGS.conquer.categoryHeading}</div>
       <div class="grid-2">
-        ${CONQUER_CATEGORIES.map(
-          (c) => `
+        ${[...CONQUER_CATEGORIES]
+          .sort((a, b) => (a.id === "michelin" ? -1 : b.id === "michelin" ? 1 : 0))
+          .map(
+            (c) => `
           <button class="tile c-${c.color}" onclick="navigate('conquer/${c.id}')">
             <span class="tile-emoji">${c.emoji}</span>
             <span class="tile-title">${c.title}</span>
           </button>`
-        ).join("")}
+          )
+          .join("")}
       </div>
     </div>
   `;
