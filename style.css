@@ -818,10 +818,28 @@ body::before {
 }
 
 .facility-modal-address {
+  display: block;
+  width: 100%;
+  border: none;
+  background: transparent;
+  font-family: inherit;
   font-size: 13px;
   color: var(--ink);
   line-height: 1.6;
   margin: 0 0 8px;
+  padding: 0;
+  cursor: pointer;
+  text-decoration: underline dotted;
+  text-underline-offset: 3px;
+}
+
+.facility-modal-address:active {
+  transform: scale(0.97);
+}
+
+.facility-modal-address.copied {
+  color: var(--orange);
+  text-decoration: none;
 }
 
 .facility-modal-maps {
