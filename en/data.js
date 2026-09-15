@@ -448,6 +448,66 @@ const HELP_ITEMS = [
 ];
 
 /* ============================================================
+   4.5) 🆘 Utility Trouble (electricity / gas / water / internet)
+   Sample content for now — the host will fill in real contacts later.
+   ============================================================ */
+const UTILITY_ITEMS = [
+  {
+    id: "electricity",
+    emoji: "⚡",
+    title: "Electricity",
+    sub: "Power outage or electrical issues",
+    color: "yellow",
+    steps: [
+      "First, check whether a breaker has tripped.",
+      "If turning the breaker back on doesn't fix it, contact the power company (e.g. Shikoku Electric Power).",
+      "If you're not sure what to do, please contact the host first.",
+    ],
+    companyNote: "✏️ Power company contact info goes here (e.g. Shikoku Electric Power)",
+  },
+  {
+    id: "gas",
+    emoji: "🔥",
+    title: "Gas",
+    sub: "Gas not working, or smells like gas",
+    color: "orange",
+    steps: [
+      "If you smell gas, don't use any flame or electrical switch — open a window and ventilate first.",
+      "If the gas stove isn't working, check the gas valve and the meter's reset button.",
+      "If you're not sure what to do, please contact the host first.",
+    ],
+    companyNote: "✏️ Gas company contact info goes here (e.g. LP gas provider)",
+  },
+  {
+    id: "water",
+    emoji: "💧",
+    title: "Water",
+    sub: "No water, or a leak",
+    color: "blue",
+    steps: [
+      "If there's no water, check whether the main shut-off valve is closed.",
+      "If there's a leak, close the main valve first.",
+      "If you're not sure what to do, please contact the host first.",
+    ],
+    companyNote: "✏️ Water utility contact info goes here (e.g. Iyo City Water Bureau)",
+  },
+  {
+    id: "internet",
+    emoji: "📶",
+    title: "Internet",
+    sub: "Wi-Fi not connecting",
+    color: "pink",
+    steps: [
+      "First, check that Wi-Fi is turned on in your phone/computer settings.",
+      "If it still won't connect, the router may need a restart.",
+      "If you're not sure what to do, please contact the host first.",
+    ],
+    companyNote: "✏️ Internet provider contact info goes here",
+    wifiLink: true,
+  },
+];
+
+/* ============================================================
    5) 📞 Contact the Host
    Real contact details mirrored from ../data.js — do not invent
    anything that isn't filled in on the JP side.
@@ -585,6 +645,14 @@ const STRINGS = {
       { emoji: "👶", label: "Child illness/injury advice (nights & holidays)", tel: "#8000" },
       { emoji: "👮", label: "Non-emergency police consultation", tel: "#9110" },
     ],
+    utilityHeading: "Utility Trouble",
+    utilityPageTitle: "Utility Trouble",
+    sampleBadge: "Sample",
+    sampleNote: "This is placeholder content — the host will add real contact details later.",
+    selfCheckTitle: "🔍 Quick Self-Check",
+    companyContactTitle: "📞 Contact",
+    managerCtaNote: "Not sure, or still not working? Contact the host first.",
+    wifiLinkLabel: "📶 View Wi-Fi connection info",
   },
 
   contact: {

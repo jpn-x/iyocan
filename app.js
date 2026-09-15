@@ -39,7 +39,8 @@ function render() {
   if (parts[0] === "conquer" && !parts[1]) return renderConquerGrid();
   if (parts[0] === "conquer" && parts[1]) return renderConquerCategory(parts[1]);
   if (parts[0] === "today") return renderTodayForm();
-  if (parts[0] === "help") return renderHelp();
+  if (parts[0] === "help" && !parts[1]) return renderHelp();
+  if (parts[0] === "help" && parts[1]) return renderUtilityDetail(parts[1]);
   if (parts[0] === "contact") return renderContact();
   return renderHome();
 }
@@ -740,6 +741,17 @@ function renderHelp() {
         <p>${STRINGS.help.heroSub}</p>
       </div>
 
+      <div class="section-title">${STRINGS.help.utilityHeading}</div>
+      <div class="grid-2">
+        ${UTILITY_ITEMS.map(
+          (u) => `
+          <button class="tile c-${u.color}" onclick="navigate('help/${u.id}')">
+            <span class="tile-emoji">${u.emoji}</span>
+            <span class="tile-title">${u.title}</span>
+          </button>`
+        ).join("")}
+      </div>
+
       <div class="emergency-banner">
         <div class="emergency-banner-title">${STRINGS.help.emergencyTitle}</div>
         <div class="emergency-actions">
@@ -806,6 +818,49 @@ function renderHelp() {
       </div>
       <p class="footer-note">${STRINGS.chips.footerNote}</p>
       ${footerNav("help")}
+      ${siteFooter()}
+    </div>
+  `;
+}
+
+function renderUtilityDetail(id) {
+  const u = UTILITY_ITEMS.find((x) => x.id === id);
+  if (!u) return renderHelp();
+
+  app.innerHTML = `
+    ${header({ back: "help", title: u.title })}
+    <div class="view">
+      <div class="hero" style="padding-top:6px;">
+        <span class="hero-emoji">${u.emoji}</span>
+        <h1 style="font-size:20px;">${u.title}</h1>
+        <p>${u.sub}</p>
+      </div>
+
+      <div class="owner-note" style="margin-bottom:14px;">🚧 ${STRINGS.help.sampleBadge}：${STRINGS.help.sampleNote}</div>
+
+      <div class="section-title">${STRINGS.help.selfCheckTitle}</div>
+      <div class="info-block">
+        <ol class="step-list" style="list-style:none;padding:0;margin:0;">
+          ${u.steps.map((s, i) => `<li><span class="step-num">${i + 1}</span><span>${s}</span></li>`).join("")}
+        </ol>
+      </div>
+
+      ${
+        u.wifiLink
+          ? `<a class="info-block-link" href="javascript:void(0)" onclick="navigate('house/wifi')" style="display:block;margin-bottom:14px;">${STRINGS.help.wifiLinkLabel}</a>`
+          : ""
+      }
+
+      <div class="section-title">${STRINGS.help.companyContactTitle}</div>
+      <div class="info-block">
+        <div class="owner-note">${u.companyNote}</div>
+      </div>
+
+      <div class="info-block">
+        <p class="parking-text">${STRINGS.help.managerCtaNote}</p>
+        <a class="cta-btn line-cta-btn" href="tel:${MANAGER.tel}" style="display:block;text-align:center;margin-top:10px;">📞 ${MANAGER.tel}</a>
+      </div>
+
       ${siteFooter()}
     </div>
   `;
