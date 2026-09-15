@@ -29,10 +29,10 @@ const TAIL = {
    Phase1では「型」だけ用意。実際の文章・写真はオーナーが後から追加。
    ============================================================ */
 const FACILITIES = [
-  { id: "key", emoji: "🔑", title: "鍵・チェックイン" },
+  { id: "info", emoji: "ℹ️", title: "施設情報" },
   { id: "wifi", emoji: "📶", title: "Wi-Fi" },
+  { id: "key", emoji: "🔑", title: "鍵・チェックイン" },
   { id: "bath", emoji: "🛁", title: "お風呂" },
-  { id: "shower", emoji: "🚿", title: "シャワー" },
   { id: "aircon", emoji: "❄️", title: "エアコン" },
   { id: "tv", emoji: "📺", title: "テレビ" },
   { id: "kitchen", emoji: "🍳", title: "キッチン" },
