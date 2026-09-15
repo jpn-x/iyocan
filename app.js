@@ -294,7 +294,6 @@ function renderHome() {
 
         <button class="conquer-card" onclick="navigate('conquer')">
           <span class="card-badge">${STRINGS.home.conquerBadge}</span>
-          <span class="card-emoji">🍊</span>
           <span class="card-text">
             <span class="card-title">${STRINGS.home.conquerTitle}</span>
             <span class="card-sub">${STRINGS.home.conquerSub}</span>

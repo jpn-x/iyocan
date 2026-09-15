@@ -364,12 +364,12 @@ body::before {
   width: 100%;
   padding: 20px;
   border-radius: var(--radius-lg);
-  border: 2px solid rgba(255, 255, 255, 0.5);
+  border: 2px solid #ffefb8;
   cursor: pointer;
   text-align: left;
   font-family: inherit;
-  color: var(--white);
-  background: linear-gradient(135deg, var(--orange) 0%, var(--pink) 100%);
+  color: #5c3d00;
+  background: linear-gradient(135deg, #fff6d8 0%, #ffd93d 55%, #ffb300 100%);
   box-shadow: var(--shadow);
   position: relative;
   overflow: hidden;
@@ -384,19 +384,13 @@ body::before {
   position: absolute;
   top: 12px;
   right: 14px;
-  background: rgba(255, 255, 255, 0.28);
-  color: var(--white);
+  background: rgba(92, 61, 0, 0.14);
+  color: #5c3d00;
   font-size: 11px;
   font-weight: 700;
   padding: 4px 10px;
   border-radius: 20px;
   letter-spacing: 0.02em;
-}
-
-.conquer-card .card-emoji {
-  font-size: 38px;
-  flex: none;
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.12));
 }
 
 .conquer-card .card-text {
