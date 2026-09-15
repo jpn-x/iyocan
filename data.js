@@ -189,7 +189,7 @@ const CATEGORIES = [
 const TODAY_PLAN = {
   emoji: "🌞",
   title: "今日どうする？",
-  subtitle: "条件を選ぶだけで、プランを相談できます",
+  subtitle: "条件を選ぶだけで、今日1日のプランが決められます！<br/>愛媛県最強のAI旅行プランナー、ぜひ使ってみてね🍊🤖",
   fields: [
     {
       id: "time",
