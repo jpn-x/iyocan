@@ -386,41 +386,36 @@ function renderHelp() {
         <p>${STRINGS.help.heroSub}</p>
       </div>
 
-      <div class="help-list">
+      <div class="emergency-banner">
+        <div class="emergency-banner-title">${STRINGS.help.emergencyTitle}</div>
+        <div class="emergency-actions">
+          <a class="emergency-btn" href="tel:119">
+            <span>🚑 ${STRINGS.help.emergencyAmbulance}</span>
+            <span class="emergency-num">119</span>
+          </a>
+          <a class="emergency-btn" href="tel:110">
+            <span>🚓 ${STRINGS.help.emergencyPolice}</span>
+            <span class="emergency-num">110</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="chip-list">
         ${HELP_ITEMS.map(
-          (h, i) => `
-          <div class="help-item" id="help-${h.id}">
-            <button class="help-head" onclick="toggleHelp('${h.id}')">
-              <span class="help-emoji">${h.emoji}</span>
-              <span class="help-title">${h.title}</span>
-              <span class="chevron">›</span>
+          (h) => `
+          <div class="chip-card">
+            <button class="chip-main sos-chip-main" onclick='sendToChatGPT(${JSON.stringify(h.prompt)})'>
+              <span class="sos-emoji">${h.emoji}</span>
+              <span class="sos-text">
+                <span class="sos-title">${h.title}</span>
+                <span class="sos-sub">${h.sub}</span>
+              </span>
             </button>
-            <div class="help-body">
-              ${
-                h.note
-                  ? `<div class="help-note">${h.note}</div>`
-                  : `<div class="help-note">${STRINGS.help.ownerPlaceholder}</div>`
-              }
-              <div class="help-actions">
-                ${
-                  h.mapQuery
-                    ? `<a class="pill-btn map" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-                        h.mapQuery
-                      )}">${STRINGS.help.mapLabel}</a>`
-                    : ""
-                }
-                ${
-                  h.id !== "emergency"
-                    ? `<button class="pill-btn ai" onclick='sendToChatGPT(${JSON.stringify(
-                        STRINGS.help.aiPrompt(h.title)
-                      )})'>${STRINGS.help.aiLabel}</button>`
-                    : ""
-                }
-              </div>
-            </div>
+            <button class="chip-copy" title="${STRINGS.chips.copyTitle}" onclick='copyText(${JSON.stringify(h.prompt)}, this)'>📋</button>
           </div>`
         ).join("")}
       </div>
+      <p class="footer-note">${STRINGS.chips.footerNote}</p>
       ${footerNav("help")}
     </div>
   `;
@@ -505,11 +500,4 @@ function renderContact() {
       <a class="company-link" href="${STRINGS.contact.companyLinkUrl}" target="_blank" rel="noopener">${STRINGS.contact.companyLinkLabel}</a>
     </div>
   `;
-}
-
-function toggleHelp(id) {
-  const el = document.getElementById("help-" + id);
-  const wasOpen = el.classList.contains("open");
-  document.querySelectorAll(".help-item.open").forEach((x) => x.classList.remove("open"));
-  if (!wasOpen) el.classList.add("open");
 }

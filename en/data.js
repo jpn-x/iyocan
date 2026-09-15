@@ -235,25 +235,83 @@ function buildTodayPrompt(answers) {
 }
 
 /* ============================================================
-   4) 🆘 Need Help? (not AI-dependent — instantly useful info)
+   4) 🆘 Need Help? (no facility database — address-aware AI questions)
    ============================================================ */
+const SOS_CONTEXT =
+  "I'm currently staying at IYOCAN, a guesthouse at 2293-1 Kamimitani, Iyo City, Ehime, Japan. ";
+
 const HELP_ITEMS = [
-  { id: "hospital", emoji: "🏥", title: "Hospital", mapQuery: "伊予市 上三谷 病院" },
-  { id: "pharmacy", emoji: "💊", title: "Pharmacy", mapQuery: "伊予市 上三谷 薬局" },
-  { id: "supermarket", emoji: "🛒", title: "Supermarket", mapQuery: "伊予市 上三谷 スーパー" },
-  { id: "conveni", emoji: "🏪", title: "Convenience Store", mapQuery: "伊予市 上三谷 コンビニ" },
-  { id: "gas", emoji: "⛽", title: "Gas Station", mapQuery: "伊予市 上三谷 ガソリンスタンド" },
-  { id: "taxi", emoji: "🚕", title: "Taxi", mapQuery: "伊予市 タクシー" },
-  { id: "train", emoji: "🚃", title: "Train", mapQuery: "伊予市 駅" },
-  { id: "bus", emoji: "🚌", title: "Bus", mapQuery: "伊予市 バス停" },
-  { id: "emergency", emoji: "📞", title: "Emergency", mapQuery: "" },
-].map((h) => ({
-  ...h,
-  tel: "",
-  address: "",
-  hours: "",
-  note: h.id === "emergency" ? "Ambulance 119 / Police 110" : "",
-}));
+  {
+    id: "hospital",
+    emoji: "🏥",
+    title: "Hospital",
+    sub: "Find a nearby hospital",
+    prompt: `${SOS_CONTEXT}I'm not feeling well and need to find a hospital or clinic. Based on this address, please find medical facilities that are currently open or could see me now. Include distance, driving time, hours, phone number, and department/specialty if available, and confirm whether each is currently open. If this could be a medical emergency, tell me to call 119 (ambulance) first instead.`,
+  },
+  {
+    id: "pharmacy",
+    emoji: "💊",
+    title: "Pharmacy",
+    sub: "Find a nearby pharmacy",
+    prompt: `${SOS_CONTEXT}I need to find a pharmacy. Based on this address, please find nearby pharmacies, checking whether each is currently open. Include distance, driving time, hours, phone number, and any notable features if available.`,
+  },
+  {
+    id: "conveni",
+    emoji: "🏪",
+    title: "Convenience Store",
+    sub: "Find a nearby convenience store",
+    prompt: `${SOS_CONTEXT}Please find convenience stores near this address, ordered by distance. Include driving time, whether each is currently open, and whether it's open 24 hours.`,
+  },
+  {
+    id: "supermarket",
+    emoji: "🛒",
+    title: "Supermarket",
+    sub: "Find a nearby supermarket",
+    prompt: `${SOS_CONTEXT}Please find supermarkets that are easy to reach by car from this address. Include whether each is currently open, distance, driving time, hours, and any notable features.`,
+  },
+  {
+    id: "gas",
+    emoji: "⛽",
+    title: "Gas Station",
+    sub: "Find a nearby gas station",
+    prompt: `${SOS_CONTEXT}Please find gas stations near this address. Include whether each is currently open, distance, driving time, hours, whether it's open 24 hours, and price or features if known.`,
+  },
+  {
+    id: "taxi",
+    emoji: "🚕",
+    title: "Taxi",
+    sub: "Call a taxi or find a company",
+    prompt: `${SOS_CONTEXT}Please find taxi companies that serve this address or area. Include phone number, hours, and how to book if available.`,
+  },
+  {
+    id: "train",
+    emoji: "🚃",
+    title: "Train / Station",
+    sub: "Find the nearest station",
+    prompt: `${SOS_CONTEXT}Please tell me the most convenient nearby train station. Include driving distance and time, the station name, which lines it serves, and how to reach major stations — explained clearly for a traveler. If current schedule/service info matters, please check the latest information.`,
+  },
+  {
+    id: "bus",
+    emoji: "🚌",
+    title: "Bus",
+    sub: "Find nearby bus stops & routes",
+    prompt: `${SOS_CONTEXT}Please find bus stops and routes I can use near this address. Include distance to the stop, which routes are available, how to reach major destinations, and current service information if available.`,
+  },
+  {
+    id: "food",
+    emoji: "🍽️",
+    title: "Food",
+    sub: "Find a restaurant open right now",
+    prompt: `${SOS_CONTEXT}I'd like to get food right now. Based on this address, please find restaurants that are currently open and easy to reach by car. Include distance, driving time, hours, budget, recommended dishes, and review ratings if available.`,
+  },
+  {
+    id: "other",
+    emoji: "🆘",
+    title: "Other Help",
+    sub: "Ask ChatGPT about anything else",
+    prompt: `${SOS_CONTEXT}I have a problem right now and need help. Treat IYOCAN as my current location, and tell me what information or nearby facilities/services could help solve my situation. Please check whether anything you recommend is currently open, if relevant.`,
+  },
+];
 
 /* ============================================================
    5) 📞 Contact the Host
@@ -335,13 +393,11 @@ const STRINGS = {
 
   help: {
     pageTitle: "Need Help?",
-    heroTitle: "If you're stuck, start here",
-    heroSub: "Tap to see details",
-    ownerPlaceholder: "✏️ The host will add the address, phone number, and hours here",
-    mapLabel: "📍 Open in Maps",
-    aiLabel: "🤖 Ask AI",
-    aiPrompt: (title) =>
-      `${LOCATION_CONTEXT}Please tell me the nearest ${title.toLowerCase()} I can reach from here, including the approximate distance and opening hours if possible.`,
+    heroTitle: "Need something right now?",
+    heroSub: "Find the nearest place or the info you need — just ask ChatGPT.",
+    emergencyTitle: "🚨 In a real emergency",
+    emergencyAmbulance: "Ambulance / Fire",
+    emergencyPolice: "Police",
   },
 
   contact: {
