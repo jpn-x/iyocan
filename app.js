@@ -742,15 +742,7 @@ function renderHelp() {
       </div>
 
       <div class="section-title">${STRINGS.help.utilityHeading}</div>
-      <div class="footer-nav">
-        ${UTILITY_ITEMS.map(
-          (u) => `
-          <button class="footer-nav-card fn-${u.id}" onclick="navigate('help/${u.id}')">
-            <span class="fn-emoji">${u.emoji}</span>
-            <span class="fn-label">${u.title}</span>
-          </button>`
-        ).join("")}
-      </div>
+      ${utilityNavRow()}
 
       <div class="emergency-banner">
         <div class="emergency-banner-title">${STRINGS.help.emergencyTitle}</div>
@@ -823,6 +815,53 @@ function renderHelp() {
   `;
 }
 
+function utilityNavRow(current) {
+  return `
+    <div class="footer-nav">
+      ${UTILITY_ITEMS.map(
+        (u) => `
+        <button class="footer-nav-card fn-${u.id} ${u.id === current ? "fn-current" : ""}" onclick="navigate('help/${u.id}')">
+          <span class="fn-emoji">${u.emoji}</span>
+          <span class="fn-label">${u.title}</span>
+        </button>`
+      ).join("")}
+    </div>`;
+}
+
+function utilityPhotoPlaceholder(caption) {
+  return `
+    <div class="sample-photo-placeholder">
+      <span class="sample-photo-icon">📸</span>
+      <span class="sample-photo-text">${STRINGS.help.photoPlaceholderLabel}</span>
+      <span class="sample-photo-caption">${caption}</span>
+    </div>`;
+}
+
+function utilityVideoEmbed(title, videoId) {
+  return `
+    <div class="section-title">${title}</div>
+    <div class="video-embed">
+      <iframe src="https://www.youtube.com/embed/${videoId}" title="${title}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+    </div>`;
+}
+
+function utilityCompanyList(companies) {
+  if (!companies || !companies.length) return "";
+  return `
+    <div class="info-block">
+      ${companies
+        .map(
+          (c) => `
+        <div class="utility-company-row">
+          <span class="utility-company-name">${c.name}</span>
+          <a class="utility-company-tel" href="tel:${c.tel.replace(/[^0-9]/g, "")}">📞 ${c.tel}</a>
+          ${c.note ? `<span class="utility-company-note">${c.note}</span>` : ""}
+        </div>`
+        )
+        .join("")}
+    </div>`;
+}
+
 function renderUtilityDetail(id) {
   const u = UTILITY_ITEMS.find((x) => x.id === id);
   if (!u) return renderHelp();
@@ -830,19 +869,48 @@ function renderUtilityDetail(id) {
   app.innerHTML = `
     ${header({ back: "help", title: u.title })}
     <div class="view">
-      <div class="hero" style="padding-top:6px;">
-        <span class="hero-emoji">${u.emoji}</span>
-        <h1 style="font-size:20px;">${u.title}</h1>
-        <p>${u.sub}</p>
-      </div>
+      ${footerNav("help")}
+      ${utilityNavRow(u.id)}
 
       <div class="owner-note" style="margin-bottom:14px;">🚧 ${STRINGS.help.sampleBadge}：${STRINGS.help.sampleNote}</div>
 
-      <div class="section-title">${STRINGS.help.selfCheckTitle}</div>
+      <div class="hero" style="padding-top:0;">
+        <span class="hero-emoji">${u.emoji}</span>
+        <h1 style="font-size:20px;">${u.pageTitle}</h1>
+      </div>
+
+      <div class="reassure-card">
+        <div class="reassure-title">😊 ${STRINGS.help.reassureTitle}</div>
+        <p class="reassure-text">${u.reassureText}</p>
+        <p class="reassure-sub">${STRINGS.help.reassureSub}</p>
+      </div>
+
+      <div class="section-title">${STRINGS.help.symptomsTitle}</div>
       <div class="info-block">
-        <ol class="step-list" style="list-style:none;padding:0;margin:0;">
-          ${u.steps.map((s, i) => `<li><span class="step-num">${i + 1}</span><span>${s}</span></li>`).join("")}
-        </ol>
+        <ul class="symptom-list">
+          ${u.symptoms.map((s) => `<li>${s}</li>`).join("")}
+        </ul>
+      </div>
+
+      <div class="step-block">
+        <div class="step-block-badge">STEP 1</div>
+        <div class="step-block-title">${u.step1.title}</div>
+        ${u.step1.text ? `<p class="step-block-text">${u.step1.text}</p>` : ""}
+        ${u.step1.checklist ? `<ul class="symptom-list">${u.step1.checklist.map((c) => `<li>${c}</li>`).join("")}</ul>` : ""}
+        ${(u.step1.photos || []).map(utilityPhotoPlaceholder).join("")}
+      </div>
+
+      <div class="step-block">
+        <div class="step-block-badge">STEP 2</div>
+        <div class="step-block-title">${u.step2.title}</div>
+        ${u.step2.text ? `<p class="step-block-text">${u.step2.text}</p>` : ""}
+        ${(u.step2.photos || []).map(utilityPhotoPlaceholder).join("")}
+        ${
+          u.step2.numberedSteps
+            ? `<ol class="step-list">${u.step2.numberedSteps.map((s, i) => `<li><span class="step-num">${i + 1}</span><span>${s}</span></li>`).join("")}</ol>`
+            : ""
+        }
+        ${u.step2.videoId ? utilityVideoEmbed(u.step2.videoTitle, u.step2.videoId) : ""}
       </div>
 
       ${
@@ -851,14 +919,40 @@ function renderUtilityDetail(id) {
           : ""
       }
 
-      <div class="section-title">${STRINGS.help.companyContactTitle}</div>
-      <div class="info-block">
-        <div class="owner-note">${u.companyNote}</div>
+      ${
+        u.urgent
+          ? `
+      <div class="emergency-banner utility-urgent-banner">
+        <div class="emergency-banner-title">${u.urgent.title}</div>
+        <p class="utility-urgent-text">${u.urgent.text}</p>
+        ${u.urgent.companies
+          .map(
+            (c) => `
+          <a class="cta-btn utility-urgent-tel" href="tel:${c.tel.replace(/[^0-9]/g, "")}">
+            <span>📞 ${c.name} ${c.tel}</span>
+          </a>
+          ${c.note ? `<p class="utility-urgent-note">${c.note}</p>` : ""}`
+          )
+          .join("")}
+      </div>`
+          : ""
+      }
+
+      <div class="step-block">
+        <div class="step-block-badge">STEP 3</div>
+        <div class="step-block-title">${u.step3.title}</div>
+        ${u.step3.text ? `<p class="step-block-text">${u.step3.text}</p>` : ""}
+        ${utilityCompanyList(u.step3.companies)}
+        ${u.step3.closingNote ? `<p class="step-block-text">${u.step3.closingNote}</p>` : ""}
       </div>
 
-      <div class="info-block">
-        <p class="parking-text">${STRINGS.help.managerCtaNote}</p>
-        <a class="cta-btn line-cta-btn" href="tel:${MANAGER.tel}" style="display:block;text-align:center;margin-top:10px;">📞 ${MANAGER.tel}</a>
+      <div class="manager-cta-card">
+        <div class="manager-cta-title">😊 ${STRINGS.help.managerCtaTitle}</div>
+        <div class="manager-cta-name">${MANAGER.name}</div>
+        <div class="manager-cta-actions">
+          <a class="cta-btn contact-tel-btn" href="tel:${MANAGER.tel}">${STRINGS.help.telLabel}</a>
+          <a class="cta-btn line-cta-btn" href="${MANAGER.lineUrl}" target="_blank" rel="noopener">${STRINGS.help.lineLabel}</a>
+        </div>
       </div>
 
       ${siteFooter()}
