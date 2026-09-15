@@ -176,6 +176,7 @@ function getFacilityModal() {
     m.className = "facility-modal";
     m.innerHTML = `
       <div class="facility-modal-card">
+        <button class="facility-modal-x" onclick="closeFacilityModal()">✕</button>
         <div class="facility-modal-title">${f.name}</div>
         <div class="facility-modal-sub">${f.subtitle}</div>
         <a class="facility-modal-cert" href="javascript:void(0)" onclick='openLightbox(${JSON.stringify(CERTIFICATE.image)}, ${JSON.stringify(STRINGS.contact.altCertificate)})'>📄 ${f.certLabel}</a>
@@ -186,7 +187,6 @@ function getFacilityModal() {
         <p class="facility-modal-line">TEL：${f.tel}</p>
         <p class="facility-modal-line">${f.managerLabel}：${f.managerName}</p>
         <a class="facility-modal-contact" href="javascript:void(0)" onclick="closeFacilityModal();navigate('contact')">${f.contactLinkLabel}</a>
-        <button class="facility-modal-close" onclick="closeFacilityModal()">${f.closeLabel}</button>
       </div>
     `;
     m.addEventListener("click", (e) => {

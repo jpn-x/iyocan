@@ -767,6 +767,7 @@ body::before {
 }
 
 .facility-modal-card {
+  position: relative;
   background: var(--white);
   border: 2px solid rgba(255, 159, 90, 0.3);
   border-radius: var(--radius-lg);
@@ -776,6 +777,25 @@ body::before {
   max-width: 320px;
   width: 100%;
   transform: scale(0.7);
+}
+
+.facility-modal-x {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: none;
+  background: var(--cream);
+  color: var(--ink);
+  font-size: 14px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.facility-modal-x:active {
+  transform: scale(0.92);
 }
 
 .facility-modal.show .facility-modal-card {
@@ -882,22 +902,6 @@ body::before {
 
 .facility-modal-contact:active {
   transform: scale(0.97);
-}
-
-.facility-modal-close {
-  margin-top: 16px;
-  border: none;
-  background: var(--cream);
-  color: var(--ink);
-  font-weight: 700;
-  font-size: 13px;
-  padding: 9px 24px;
-  border-radius: 20px;
-  cursor: pointer;
-}
-
-.facility-modal-close:active {
-  transform: scale(0.96);
 }
 
 .home-card .card-badge {
