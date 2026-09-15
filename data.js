@@ -513,11 +513,11 @@ const STRINGS = {
     helpTitle: "困ったとき",
     helpSub: "病院・薬局・交通など",
     contactTitle: "管理人に連絡",
-    contactSub: "村上直樹に連絡してみる",
+    contactSub: "お宿の事で困ったら連絡してね🍊",
     conquerTitle: "🍊 愛媛を攻め尽くす！",
     conquerSub: "食べる・遊ぶ・夜・お土産まで、愛媛でやりたいことをAIに聞いてみよう🔥",
     conquerBadge: "注目",
-    footerNote: "QRコードからこのページを開いたあなたへ 🍊",
+    footerNote: "🍊 ようこそ愛媛・伊予市 お宿IYOCANへ 🍊",
   },
 
   house: {

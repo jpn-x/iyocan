@@ -515,11 +515,11 @@ const STRINGS = {
     helpTitle: "Need Help?",
     helpSub: "Hospital, pharmacy, transport & more",
     contactTitle: "Contact the Host",
-    contactSub: "Get in touch with Naoki",
+    contactSub: "If anything's wrong with the stay, just reach out 🍊",
     conquerTitle: "🍊 Conquer Ehime!",
     conquerSub: "From food and nightlife to souvenirs — ask AI anything you want to do in Ehime 🔥",
     conquerBadge: "Featured",
-    footerNote: "For guests who scanned the QR code 🍊",
+    footerNote: "🍊 Welcome to IYOCAN, a guesthouse in Iyo City, Ehime 🍊",
   },
 
   house: {

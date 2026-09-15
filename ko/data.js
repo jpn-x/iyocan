@@ -514,11 +514,11 @@ const STRINGS = {
     helpTitle: "고민 해결",
     helpSub: "병원・약국・교통 등",
     contactTitle: "관리자에게 연락하기",
-    contactSub: "무라카미 나오키에게 연락하기",
+    contactSub: "숙소에 문제가 있으면 언제든 연락하세요🍊",
     conquerTitle: "🍊 에히메 완전정복!",
     conquerSub: "먹고, 즐기고, 밤과 기념품까지 — 에히메에서 하고 싶은 걸 AI에게 물어보세요🔥",
     conquerBadge: "추천",
-    footerNote: "QR코드로 이 페이지를 열어주신 당신께 🍊",
+    footerNote: "🍊 에히메현 이요시의 게스트하우스 IYOCAN에 오신 것을 환영합니다 🍊",
   },
 
   house: {

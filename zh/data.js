@@ -515,11 +515,11 @@ const STRINGS = {
     helpTitle: "遇到困扰",
     helpSub: "医院・药店・交通等",
     contactTitle: "联系管理员",
-    contactSub: "联系村上直树",
+    contactSub: "住宿有任何问题都可以联系我们🍊",
     conquerTitle: "🍊 玩转爱媛！",
     conquerSub: "吃喝玩乐到伴手礼，想做的事都能问AI🔥",
     conquerBadge: "精选",
-    footerNote: "献给扫描二维码打开这个页面的你 🍊",
+    footerNote: "🍊 欢迎来到爱媛县伊予市的民宿IYOCAN 🍊",
   },
 
   house: {

@@ -311,7 +311,7 @@ function renderHome() {
         </button>
       </div>
 
-      <p class="footer-note">${STRINGS.home.footerNote}</p>
+      <a class="footer-note" href="#home" onclick="event.preventDefault();window.scrollTo({top:0,behavior:'smooth'})">${STRINGS.home.footerNote}</a>
     </div>
   `;
 }
