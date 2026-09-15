@@ -190,6 +190,7 @@ function renderHouseList() {
   app.innerHTML = `
     ${header({ back: "home", title: "いよ館の使い方" })}
     <div class="view">
+      ${footerNav("house")}
       <div class="hero" style="padding-top:6px;">
         <span class="hero-emoji">🏠</span>
         <h1 style="font-size:20px;">宿のことはこちら</h1>
@@ -204,7 +205,6 @@ function renderHouseList() {
           </button>`
         ).join("")}
       </div>
-      ${footerNav("house")}
     </div>
   `;
 }
@@ -234,6 +234,7 @@ function renderEhimeGrid() {
   app.innerHTML = `
     ${header({ back: "home", title: "愛媛を楽しむ" })}
     <div class="view">
+      ${footerNav("ehime")}
       <div class="hero" style="padding-top:6px;">
         <span class="hero-emoji">🤖</span>
         <h1 style="font-size:20px;">愛媛、何しよう？</h1>
@@ -259,7 +260,6 @@ function renderEhimeGrid() {
           </button>`
         ).join("")}
       </div>
-      ${footerNav("ehime")}
     </div>
   `;
 }
@@ -349,6 +349,7 @@ function renderHelp() {
   app.innerHTML = `
     ${header({ back: "home", title: "困ったとき" })}
     <div class="view">
+      ${footerNav("help")}
       <div class="hero" style="padding-top:6px;">
         <span class="hero-emoji">🆘</span>
         <h1 style="font-size:20px;">困ったときはこちら</h1>
@@ -390,7 +391,6 @@ function renderHelp() {
           </div>`
         ).join("")}
       </div>
-      ${footerNav("help")}
     </div>
   `;
 }
@@ -412,6 +412,7 @@ function renderContact() {
   app.innerHTML = `
     ${header({ back: "home", title: "管理人に連絡" })}
     <div class="view">
+      ${footerNav("contact")}
       <div class="contact-hero">
         <img src="${MANAGER.photo}" alt="管理人" class="contact-photo" />
         <p class="contact-message">${MANAGER.message}</p>
@@ -454,8 +455,6 @@ function renderContact() {
           <div class="link-card-url">🔗 issho.jreco.net</div>
         </div>
       </a>
-
-      ${footerNav("contact")}
     </div>
   `;
 }
