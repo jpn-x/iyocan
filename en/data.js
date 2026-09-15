@@ -570,7 +570,7 @@ const STRINGS = {
     emergencyTitle: "🚨 In a real emergency",
     emergencyAmbulance: "Ambulance / Fire",
     emergencyPolice: "Police",
-    moreContactsLabel: "📖 More emergency contacts",
+    moreContactsLabel: "⚠️ Not sure whether it's an emergency? Contacts to ask first",
     localContactsTitle: "🏢 Local Police & Fire Station",
     localContacts: [
       { emoji: "🚓", label: "Iyo Police Station", tel: "089-982-0110" },

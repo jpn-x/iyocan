@@ -639,7 +639,7 @@ const STRINGS = {
     emergencyTitle: "🚨 本当に緊急のときは",
     emergencyAmbulance: "救急・消防",
     emergencyPolice: "警察",
-    moreContactsLabel: "📖 その他の緊急連絡先を見る",
+    moreContactsLabel: "⚠️ 緊急だけど呼ぶか迷ったら相談する連絡先",
     localContactsTitle: "🏢 地元の警察・消防",
     localContacts: [
       { emoji: "🚓", label: "伊予警察署", tel: "089-982-0110" },

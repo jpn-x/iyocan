@@ -731,8 +731,8 @@ function renderHelp() {
       ${
         STRINGS.help.localContacts
           ? `
-      <details class="emergency-more">
-        <summary class="emergency-more-summary">${STRINGS.help.moreContactsLabel}</summary>
+      <div class="emergency-more">
+        <div class="emergency-more-summary">${STRINGS.help.moreContactsLabel}</div>
         <div class="emergency-more-body">
           <div class="emergency-sub-title">${STRINGS.help.localContactsTitle}</div>
           <div class="emergency-sub-list">
@@ -759,7 +759,7 @@ function renderHelp() {
               .join("")}
           </div>
         </div>
-      </details>`
+      </div>`
           : ""
       }
 
