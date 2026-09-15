@@ -742,12 +742,12 @@ function renderHelp() {
       </div>
 
       <div class="section-title">${STRINGS.help.utilityHeading}</div>
-      <div class="grid-2">
+      <div class="footer-nav">
         ${UTILITY_ITEMS.map(
           (u) => `
-          <button class="tile c-${u.color}" onclick="navigate('help/${u.id}')">
-            <span class="tile-emoji">${u.emoji}</span>
-            <span class="tile-title">${u.title}</span>
+          <button class="footer-nav-card fn-${u.id}" onclick="navigate('help/${u.id}')">
+            <span class="fn-emoji">${u.emoji}</span>
+            <span class="fn-label">${u.title}</span>
           </button>`
         ).join("")}
       </div>

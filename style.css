@@ -1729,6 +1729,22 @@ body::before {
   background: var(--pink-soft);
 }
 
+.footer-nav-card.fn-electricity {
+  background: var(--yellow-soft);
+}
+
+.footer-nav-card.fn-gas {
+  background: var(--orange-soft);
+}
+
+.footer-nav-card.fn-water {
+  background: var(--blue-soft);
+}
+
+.footer-nav-card.fn-internet {
+  background: var(--pink-soft);
+}
+
 /* ---------- 📞 管理人に連絡 ---------- */
 .contact-hero {
   text-align: center;
