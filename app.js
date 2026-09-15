@@ -467,6 +467,7 @@ function renderContact() {
         </div>
       </a>
       ${footerNav("contact")}
+      <a class="company-link" href="${STRINGS.contact.companyLinkUrl}" target="_blank" rel="noopener">${STRINGS.contact.companyLinkLabel}</a>
     </div>
   `;
 }

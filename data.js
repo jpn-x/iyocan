@@ -351,6 +351,8 @@ const STRINGS = {
     docSectionTitle: "📎 書類・データのやり取り",
     altManager: "管理人",
     altLineQr: "LINE QRコード",
+    companyLinkLabel: "運営会社について",
+    companyLinkUrl: "https://search.jreco.net/company",
   },
 
   nav: {

@@ -353,6 +353,8 @@ const STRINGS = {
     docSectionTitle: "📎 Sharing Files & Documents",
     altManager: "Host",
     altLineQr: "LINE QR code",
+    companyLinkLabel: "About the operating company",
+    companyLinkUrl: "https://search.jreco.net/company",
   },
 
   nav: {
