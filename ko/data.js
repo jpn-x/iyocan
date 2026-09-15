@@ -476,7 +476,7 @@ const CERTIFICATE = {
    ============================================================ */
 const CHATGPT_PROMO = {
   title: "🤖 ChatGPT를 설치하고 진짜 실력을 발휘하세요!",
-  lead: "이 가이드는 ChatGPT와 함께 사용하면 더 편리해요🍊<br/>「에히메 즐기기」나「고민 해결」의 질문을 탭하면, 질문 내용이 입력된 상태로 ChatGPT가 열려요.",
+  lead: "이 가이드는 ChatGPT와 함께 사용하면 더 편리해요🍊<br/>딱 한 번만 써봐도 얼마나 편한지 바로 알게 될 거예요.<br/><br/>「에히메 즐기기」나「고민 해결」의 질문을 탭하면, 질문 내용이 입력된 상태로 ChatGPT가 열려요! 탭만 하면 끝.",
   note: "📱 아직 ChatGPT 앱이 없다면 먼저 설치해 보세요. AI의 편리함을 직접 경험해 보세요✨",
   ios: { label: "🍎 iPhone에서 설치", url: "https://apps.apple.com/app/chatgpt/id6448311069" },
   android: { label: "🤖 Android에서 설치", url: "https://play.google.com/store/apps/details?id=com.openai.chatgpt" },

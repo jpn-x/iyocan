@@ -477,7 +477,7 @@ const CERTIFICATE = {
    ============================================================ */
 const CHATGPT_PROMO = {
   title: "🤖 装上ChatGPT，体验全部功能！",
-  lead: "搭配ChatGPT使用，这份指南会更好用🍊<br/>点击「爱媛玩乐」或「遇到困扰」里的问题，ChatGPT会直接带着问题内容打开。",
+  lead: "搭配ChatGPT使用，这份指南会更好用🍊<br/>只要试一次，你就会立刻明白有多方便。<br/><br/>点击「爱媛玩乐」或「遇到困扰」里的问题，ChatGPT会直接带着问题内容打开！只需一点即可。",
   note: "📱 还没安装ChatGPT App的朋友，请先安装一下。这是体验AI便利性的好机会✨",
   ios: { label: "🍎 iPhone安装", url: "https://apps.apple.com/app/chatgpt/id6448311069" },
   android: { label: "🤖 Android安装", url: "https://play.google.com/store/apps/details?id=com.openai.chatgpt" },

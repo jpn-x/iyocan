@@ -480,7 +480,7 @@ const CERTIFICATE = {
    ============================================================ */
 const CHATGPT_PROMO = {
   title: "🤖 Get ChatGPT and unlock the full experience!",
-  lead: "This guide works even better together with ChatGPT.<br/>Tap any question in \"Explore Ehime\" or \"Need Help?\" and ChatGPT opens with your question already filled in.",
+  lead: "This guide works even better together with ChatGPT.<br/>Try it just once, and you'll immediately get why it's so handy.<br/><br/>Tap any question in \"Explore Ehime\" or \"Need Help?\" and ChatGPT opens with your question already filled in — just tap and go.",
   note: "📱 Don't have the app yet? Grab it first, then come back and give it a try ✨",
   ios: { label: "🍎 Get it on iPhone", url: "https://apps.apple.com/app/chatgpt/id6448311069" },
   android: { label: "🤖 Get it on Android", url: "https://play.google.com/store/apps/details?id=com.openai.chatgpt" },
