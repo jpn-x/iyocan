@@ -365,10 +365,16 @@ const CHATGPT_PROMO = {
    6) 画面まわりの共通文言（日本語版）
    app.js はこの STRINGS を参照するだけで、日英で完全に共有できます。
    ============================================================ */
+const LANG_OPTIONS = [
+  { code: "ja", flag: "🇯🇵", label: "日本語", href: "./", current: true },
+  { code: "en", flag: "🇬🇧", label: "English", href: "en/", current: false },
+  { code: "zh", flag: "🇨🇳", label: "中文", href: "zh/", current: false },
+];
+
 const STRINGS = {
-  siteName: "IYOCAN GUIDE",
+  siteName: "いよ館 ガイド",
   topLink: "トップ",
-  langSwitch: { label: "🇬🇧 English", href: "en/" },
+  langSwitch: { label: "🌐 言語" },
 
   home: {
     title: "IYOCAN GUIDE",

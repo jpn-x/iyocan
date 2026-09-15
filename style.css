@@ -114,6 +114,12 @@ body::before {
   margin-left: auto;
 }
 
+.lang-switch {
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
 .lang-switch:active,
 .top-link:active {
   transform: scale(0.95);
@@ -576,10 +582,10 @@ body::before {
 }
 
 .promo-modal.show .promo-modal-card {
-  animation: promoPopIn 0.42s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  animation: popIn 0.42s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
 }
 
-@keyframes promoPopIn {
+@keyframes popIn {
   0% {
     transform: scale(0.6);
     opacity: 0;
@@ -592,6 +598,79 @@ body::before {
     transform: scale(1);
     opacity: 1;
   }
+}
+
+/* ---------- 言語切り替えポップアップ ---------- */
+.lang-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(20, 12, 8, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.lang-modal.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.lang-modal-card {
+  background: var(--white);
+  border: 2px solid rgba(255, 159, 90, 0.3);
+  border-radius: var(--radius-lg);
+  padding: 12px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
+  max-width: 300px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transform: scale(0.7);
+}
+
+.lang-modal.show .lang-modal-card {
+  animation: popIn 0.42s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.lang-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  color: var(--ink);
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.lang-option:active {
+  transform: scale(0.98);
+}
+
+.lang-option.current {
+  background: var(--orange-soft);
+  cursor: default;
+}
+
+.lang-flag {
+  font-size: 20px;
+}
+
+.lang-label {
+  flex: 1;
+}
+
+.lang-check {
+  color: var(--orange);
+  font-weight: 900;
 }
 
 .home-card .card-badge {

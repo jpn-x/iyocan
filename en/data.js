@@ -367,10 +367,16 @@ const CHATGPT_PROMO = {
 /* ============================================================
    6) Screen copy (English)
    ============================================================ */
+const LANG_OPTIONS = [
+  { code: "ja", flag: "🇯🇵", label: "日本語", href: "../", current: false },
+  { code: "en", flag: "🇬🇧", label: "English", href: "./", current: true },
+  { code: "zh", flag: "🇨🇳", label: "中文", href: "../zh/", current: false },
+];
+
 const STRINGS = {
   siteName: "IYOCAN GUIDE",
   topLink: "Top",
-  langSwitch: { label: "🇯🇵 日本語", href: "../" },
+  langSwitch: { label: "🌐 Language" },
 
   home: {
     title: "IYOCAN GUIDE",

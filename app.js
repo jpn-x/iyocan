@@ -56,7 +56,7 @@ function header({ back = null, title = null } = {}) {
           : ""
       }
       <a class="top-link" href="#home" onclick="event.preventDefault();navigate('home')">${STRINGS.topLink}</a>
-      <a class="lang-switch" href="${STRINGS.langSwitch.href}">${STRINGS.langSwitch.label}</a>
+      <button class="lang-switch" onclick="openLangModal()">${STRINGS.langSwitch.label}</button>
     </div>
   `;
 }
@@ -130,6 +130,38 @@ function openPromoModal() {
 
 function closePromoModal() {
   const m = document.querySelector(".promo-modal");
+  if (m) m.classList.remove("show");
+}
+
+function getLangModal() {
+  let m = document.querySelector(".lang-modal");
+  if (!m) {
+    m = document.createElement("div");
+    m.className = "lang-modal";
+    m.innerHTML = `
+      <div class="lang-modal-card">
+        ${LANG_OPTIONS.map((o) =>
+          o.current
+            ? `<span class="lang-option current"><span class="lang-flag">${o.flag}</span><span class="lang-label">${o.label}</span><span class="lang-check">✓</span></span>`
+            : `<a class="lang-option" href="${o.href}"><span class="lang-flag">${o.flag}</span><span class="lang-label">${o.label}</span></a>`
+        ).join("")}
+      </div>
+    `;
+    m.addEventListener("click", (e) => {
+      if (e.target === m) closeLangModal();
+    });
+    document.body.appendChild(m);
+  }
+  return m;
+}
+
+function openLangModal() {
+  const m = getLangModal();
+  m.classList.add("show");
+}
+
+function closeLangModal() {
+  const m = document.querySelector(".lang-modal");
   if (m) m.classList.remove("show");
 }
 
