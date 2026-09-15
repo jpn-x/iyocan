@@ -58,6 +58,7 @@ function header({ back = null, title = null } = {}) {
           : ""
       }
       <a class="top-link" href="#home" onclick="event.preventDefault();navigate('home')">${STRINGS.topLink}</a>
+      ${typeof FACILITY_INFO !== "undefined" ? `<button class="facility-link" onclick="openFacilityModal()">${STRINGS.facilityChip}</button>` : ""}
       <button class="lang-switch" onclick="openLangModal()">${STRINGS.langSwitch.label}</button>
     </div>
   `;
@@ -164,6 +165,42 @@ function openLangModal() {
 
 function closeLangModal() {
   const m = document.querySelector(".lang-modal");
+  if (m) m.classList.remove("show");
+}
+
+function getFacilityModal() {
+  let m = document.querySelector(".facility-modal");
+  if (!m) {
+    const f = FACILITY_INFO;
+    m = document.createElement("div");
+    m.className = "facility-modal";
+    m.innerHTML = `
+      <div class="facility-modal-card">
+        <div class="facility-modal-title">${f.name}</div>
+        <div class="facility-modal-sub">${f.subtitle}</div>
+        <p class="facility-modal-address">${f.addressText}</p>
+        <a class="facility-modal-maps" href="${f.mapsUrl}" target="_blank" rel="noopener">${f.mapsLabel}</a>
+        <div class="facility-modal-divider"></div>
+        <p class="facility-modal-line">TEL：${f.tel}</p>
+        <p class="facility-modal-line">${f.managerLabel}：${f.managerName}</p>
+        <button class="facility-modal-close" onclick="closeFacilityModal()">${f.closeLabel}</button>
+      </div>
+    `;
+    m.addEventListener("click", (e) => {
+      if (e.target === m) closeFacilityModal();
+    });
+    document.body.appendChild(m);
+  }
+  return m;
+}
+
+function openFacilityModal() {
+  const m = getFacilityModal();
+  m.classList.add("show");
+}
+
+function closeFacilityModal() {
+  const m = document.querySelector(".facility-modal");
   if (m) m.classList.remove("show");
 }
 

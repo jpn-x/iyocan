@@ -94,7 +94,8 @@ body::before {
 }
 
 .lang-switch,
-.top-link {
+.top-link,
+.facility-link {
   flex: none;
   display: inline-flex;
   align-items: center;
@@ -114,14 +115,16 @@ body::before {
   margin-left: auto;
 }
 
-.lang-switch {
+.lang-switch,
+.facility-link {
   border: none;
   cursor: pointer;
   font-family: inherit;
 }
 
 .lang-switch:active,
-.top-link:active {
+.top-link:active,
+.facility-link:active {
   transform: scale(0.95);
 }
 
@@ -747,6 +750,106 @@ body::before {
 .lang-check {
   color: var(--orange);
   font-weight: 900;
+}
+
+/* ---------- 施設情報ポップアップ（ヘッダー「施設」チップから起動） ---------- */
+.facility-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(20, 12, 8, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.facility-modal.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.facility-modal-card {
+  background: var(--white);
+  border: 2px solid rgba(255, 159, 90, 0.3);
+  border-radius: var(--radius-lg);
+  padding: 24px 20px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  max-width: 320px;
+  width: 100%;
+  transform: scale(0.7);
+}
+
+.facility-modal.show .facility-modal-card {
+  animation: popIn 0.42s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.facility-modal-title {
+  font-weight: 900;
+  font-size: 19px;
+  color: var(--ink);
+  line-height: 1.4;
+}
+
+.facility-modal-sub {
+  font-size: 13px;
+  color: var(--ink-soft);
+  font-weight: 700;
+  margin: 2px 0 12px;
+}
+
+.facility-modal-address {
+  font-size: 13px;
+  color: var(--ink);
+  line-height: 1.6;
+  margin: 0 0 8px;
+}
+
+.facility-modal-maps {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--orange);
+  text-decoration: none;
+}
+
+.facility-modal-maps:active {
+  transform: scale(0.97);
+}
+
+.facility-modal-divider {
+  height: 1px;
+  background: rgba(74, 59, 59, 0.12);
+  margin: 14px 0;
+}
+
+.facility-modal-line {
+  font-size: 13.5px;
+  color: var(--ink);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.facility-modal-close {
+  margin-top: 16px;
+  border: none;
+  background: var(--cream);
+  color: var(--ink);
+  font-weight: 700;
+  font-size: 13px;
+  padding: 9px 24px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.facility-modal-close:active {
+  transform: scale(0.96);
 }
 
 .home-card .card-badge {
