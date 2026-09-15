@@ -87,7 +87,8 @@ body::before {
   top: 10px;
   z-index: 20;
   border-radius: var(--radius-lg);
-  background: rgba(255, 248, 239, 0.9);
+  background: linear-gradient(135deg, rgba(255, 250, 242, 0.92) 0%, rgba(255, 224, 194, 0.92) 100%);
+  border: 2px solid rgba(255, 159, 90, 0.35);
   backdrop-filter: blur(6px);
   box-shadow: var(--shadow-soft);
 }
