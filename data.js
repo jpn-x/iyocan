@@ -256,15 +256,18 @@ const HELP_ITEMS = [
 
 /* ============================================================
    5) 📞 管理人に連絡
-   name・tel・lineId は未入力（オーナーがここに追加できます）
    ============================================================ */
 const MANAGER = {
   photo: "assets/manager.png",
   message: "困った時は、いつでも連絡してね🍊",
-  name: "",
-  tel: "",
-  lineId: "",
+  name: "村上 直樹（むらかみ なおき）",
+  tel: "090-5044-7799",
+  lineId: "murakaminaoki",
   lineQr: "assets/line-qr.jpg",
+  sns: [
+    { id: "x", emoji: "𝕏", label: "@cadillac600", url: "https://x.com/cadillac600" },
+    { id: "instagram", emoji: "📷", label: "Instagram", url: "https://www.instagram.com/cadillac600/?hl=ja" },
+  ],
 };
 
 const ISSHO_CARD = {

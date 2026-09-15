@@ -411,6 +411,21 @@ function renderContact() {
       <div class="contact-card">
         ${nameHtml}
         ${telHtml}
+        ${
+          MANAGER.sns && MANAGER.sns.length
+            ? `<div class="sns-row">
+                ${MANAGER.sns
+                  .map(
+                    (s) => `
+                  <a class="sns-btn" href="${s.url}" target="_blank" rel="noopener">
+                    <span class="sns-emoji">${s.emoji}</span>
+                    <span>${s.label}</span>
+                  </a>`
+                  )
+                  .join("")}
+              </div>`
+            : ""
+        }
       </div>
 
       <div class="section-title">💬 LINEで連絡する</div>

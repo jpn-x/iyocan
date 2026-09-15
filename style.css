@@ -786,6 +786,30 @@ body {
   box-shadow: 0 8px 18px rgba(111, 195, 223, 0.3);
 }
 
+.sns-row {
+  display: flex;
+  gap: 10px;
+}
+
+.sns-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 11px 10px;
+  border-radius: 20px;
+  background: var(--cream);
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.sns-btn .sns-emoji {
+  font-size: 15px;
+}
+
 .line-card {
   background: var(--white);
   border-radius: var(--radius-md);
