@@ -252,6 +252,16 @@ function renderHome() {
           <span class="card-arrow">›</span>
         </button>
 
+        <button class="conquer-card" onclick="navigate('conquer')">
+          <span class="card-badge">${STRINGS.home.conquerBadge}</span>
+          <span class="card-emoji">🍊</span>
+          <span class="card-text">
+            <span class="card-title">${STRINGS.home.conquerTitle}</span>
+            <span class="card-sub">${STRINGS.home.conquerSub}</span>
+          </span>
+          <span class="card-arrow">›</span>
+        </button>
+
         <button class="home-card house" onclick="navigate('house')">
           <span class="card-emoji">🏠</span>
           <span class="card-text">
@@ -279,16 +289,6 @@ function renderHome() {
           <span class="card-arrow">›</span>
         </button>
       </div>
-
-      <button class="conquer-card" onclick="navigate('conquer')">
-        <span class="card-badge">${STRINGS.home.conquerBadge}</span>
-        <span class="card-emoji">🍊</span>
-        <span class="card-text">
-          <span class="card-title">${STRINGS.home.conquerTitle}</span>
-          <span class="card-sub">${STRINGS.home.conquerSub}</span>
-        </span>
-        <span class="card-arrow">›</span>
-      </button>
 
       <div class="promo-card">
         <div class="promo-title">${CHATGPT_PROMO.title}</div>
