@@ -521,8 +521,8 @@ const LANG_OPTIONS = [
 const STRINGS = {
   siteName: "いよ館 ガイド",
   topLink: "トップ",
-  facilityChip: "ℹ️ 施設",
-  langSwitch: { label: "🌐 言語" },
+  facilityChip: "施設",
+  langSwitch: { label: "言語" },
 
   home: {
     title: "IYOCAN GUIDE",
