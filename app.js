@@ -49,7 +49,32 @@ function header({ back = null, title = null } = {}) {
       <a class="logo-link" href="#home" onclick="event.preventDefault();navigate('home')">
         <span class="logo-emoji">🍊</span>${title ? "" : "いよ館 GUIDE"}
       </a>
-      ${title ? `<div class="header-title">${title}</div>` : ""}
+      ${
+        title
+          ? `<a class="header-title" href="#home" onclick="event.preventDefault();navigate('home')">${title}</a>`
+          : ""
+      }
+    </div>
+  `;
+}
+
+function footerNav(current) {
+  const items = [
+    { id: "house", emoji: "🏠", label: "いよ館の使い方", cls: "fn-house" },
+    { id: "ehime", emoji: "🤖", label: "愛媛を楽しむ", cls: "fn-ehime" },
+    { id: "help", emoji: "🆘", label: "困ったとき", cls: "fn-help" },
+  ];
+  return `
+    <div class="footer-nav">
+      ${items
+        .map(
+          (it) => `
+        <button class="footer-nav-card ${it.cls} ${it.id === current ? "fn-current" : ""}" onclick="navigate('${it.id}')">
+          <span class="fn-emoji">${it.emoji}</span>
+          <span class="fn-label">${it.label}</span>
+        </button>`
+        )
+        .join("")}
     </div>
   `;
 }
@@ -168,6 +193,7 @@ function renderHouseList() {
           </button>`
         ).join("")}
       </div>
+      ${footerNav("house")}
     </div>
   `;
 }
@@ -352,6 +378,7 @@ function renderHelp() {
           </div>`
         ).join("")}
       </div>
+      ${footerNav("help")}
     </div>
   `;
 }

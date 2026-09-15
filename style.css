@@ -105,6 +105,8 @@ body {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  text-decoration: none;
+  color: inherit;
 }
 
 /* ---------- 汎用レイアウト ---------- */
@@ -665,6 +667,64 @@ body {
   font-size: 12px;
   margin-top: 30px;
   opacity: 0.8;
+}
+
+/* ---------- ページ下部の移動カード（3枚横並び） ---------- */
+.footer-nav {
+  display: flex;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.footer-nav-card {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 14px 4px;
+  border: none;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-soft);
+  font-family: inherit;
+  color: var(--ink);
+  cursor: pointer;
+  text-align: center;
+  transition: transform 0.15s ease;
+}
+
+.footer-nav-card:active {
+  transform: scale(0.96);
+}
+
+.footer-nav-card .fn-emoji {
+  font-size: 22px;
+}
+
+.footer-nav-card .fn-label {
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.footer-nav-card.fn-house {
+  background: var(--blue-soft);
+}
+
+.footer-nav-card.fn-ehime {
+  background: linear-gradient(135deg, var(--pink), var(--orange));
+  color: var(--white);
+}
+
+.footer-nav-card.fn-help {
+  background: var(--yellow-soft);
+}
+
+.footer-nav-card.fn-current {
+  box-shadow: inset 0 0 0 2px rgba(74, 59, 59, 0.18);
+  opacity: 0.6;
 }
 
 /* ---------- トースト ---------- */
