@@ -5,6 +5,7 @@
    ============================================================ */
 
 const HOME_HERO_ICON = "../assets/house-icon.png";
+const SITE_ICON = "../assets/icon-32.png";
 
 const LOCATION_CONTEXT =
   "ฉันพักอยู่ที่ 'IYOCAN' ซึ่งเป็นเกสต์เฮาส์ในคามิมิทานิ เมืองอิโย จังหวัดเอฮิเมะ ประเทศญี่ปุ่น ";

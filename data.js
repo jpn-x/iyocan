@@ -6,6 +6,9 @@
 /* トップページのヒーロー画像 */
 const HOME_HERO_ICON = "assets/house-icon.png";
 
+/* ヘッダー左上のロゴアイコン */
+const SITE_ICON = "assets/icon-32.png";
+
 /* ChatGPTへ渡す質問文の「共通の前置き」 */
 const LOCATION_CONTEXT =
   "愛媛県伊予市上三谷にある民泊『IYOCAN』に宿泊しています。";

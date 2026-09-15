@@ -138,8 +138,11 @@ body::before {
   font-size: 17px;
 }
 
-.logo-link .logo-emoji {
-  font-size: 22px;
+.logo-link .logo-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  flex: none;
 }
 
 .back-btn {

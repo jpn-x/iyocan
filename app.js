@@ -50,7 +50,7 @@ function header({ back = null, title = null } = {}) {
     <div class="top-header">
       ${back ? `<button class="back-btn" onclick="navigate('${back}')">←</button>` : ""}
       <a class="logo-link" href="#home" onclick="event.preventDefault();navigate('home')">
-        <span class="logo-emoji">🍊</span>${title ? "" : STRINGS.siteName}
+        <img class="logo-icon" src="${SITE_ICON}" alt="" />${title ? "" : STRINGS.siteName}
       </a>
       ${
         title

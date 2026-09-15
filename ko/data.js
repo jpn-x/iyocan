@@ -6,6 +6,7 @@
    ============================================================ */
 
 const HOME_HERO_ICON = "../assets/house-icon.png";
+const SITE_ICON = "../assets/icon-32.png";
 
 const LOCATION_CONTEXT =
   "저는 일본 에히메현 이요시 카미미타니에 있는 게스트하우스 'IYOCAN'에 머물고 있습니다. ";

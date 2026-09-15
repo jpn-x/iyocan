@@ -6,6 +6,7 @@
 
 /* 首页顶部的图标 */
 const HOME_HERO_ICON = "../assets/house-icon.png";
+const SITE_ICON = "../assets/icon-32.png";
 
 /* 附加在每个ChatGPT提问前的共同开头 */
 const LOCATION_CONTEXT =

@@ -7,6 +7,9 @@
 /* Hero image on the home page */
 const HOME_HERO_ICON = "../assets/house-icon.png";
 
+/* Logo icon in the top-left of the header */
+const SITE_ICON = "../assets/icon-32.png";
+
 /* Shared context sentence prepended to every ChatGPT prompt */
 const LOCATION_CONTEXT =
   "I'm staying at IYOCAN, a guesthouse in Kamimitani, Iyo City, Ehime, Japan. ";
