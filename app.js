@@ -413,9 +413,19 @@ function renderFacilityInfoDetail(f) {
 
       <div class="info-block">
         <div class="info-block-label">${fi.addressSectionTitle}</div>
-        <button class="facility-modal-address" onclick='copyText(${JSON.stringify(fi.addressCopy)}, this)'>${fi.addressText}</button>
-        <p class="info-block-en">${fi.addressTextEn}</p>
-        <a class="facility-modal-maps" href="${fi.mapsUrl}" target="_blank" rel="noopener" style="justify-content:flex-start;">${fi.mapsLabel}</a>
+        <div class="access-row access-row-first">
+          <div class="access-row-main">
+            <span class="access-icon">📍</span>
+            <span class="access-text">
+              <button class="address-copy-btn" onclick='copyText(${JSON.stringify(fi.addressCopy)}, this)'>
+                <span>${fi.addressText}</span>
+                <span class="address-copy-icon">📋</span>
+              </button>
+              <span class="access-desc-en">${fi.addressTextEn}</span>
+            </span>
+          </div>
+          <a class="access-route-link" href="${fi.mapsUrl}" target="_blank" rel="noopener">${fi.mapsLabel}</a>
+        </div>
       </div>
 
       <div class="info-block">
@@ -440,8 +450,15 @@ function renderFacilityInfoDetail(f) {
 
       <div class="info-block">
         <div class="info-block-label">${fi.parkingSectionTitle}</div>
-        <p class="parking-text">${fi.parkingIcon} ${fi.parkingText}</p>
-        <p class="info-block-en">${fi.parkingTextEn}</p>
+        <div class="access-row access-row-first">
+          <div class="access-row-main">
+            <span class="access-icon">${fi.parkingIcon}</span>
+            <span class="access-text">
+              <span class="access-desc">${fi.parkingText}</span>
+              <span class="access-desc-en">${fi.parkingTextEn}</span>
+            </span>
+          </div>
+        </div>
       </div>
 
       <div class="section-title">${fi.wifiSectionTitle}</div>

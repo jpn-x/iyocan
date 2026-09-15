@@ -511,7 +511,10 @@ const FACILITY_INFO = {
   photos: [
     { src: "assets/house-front.jpg", alt: "IYOCAN外観（正面）" },
     { src: "assets/house-exterior.jpg", alt: "IYOCAN外観（空撮）" },
+    { src: "assets/house-exterior2.jpg", alt: "IYOCAN外観（空撮・全体）" },
     { src: "assets/house-parking.jpg", alt: "駐車場（参考図）" },
+    { src: "assets/house-floorplan-1f.jpg", alt: "間取り図（1F. 120m²）" },
+    { src: "assets/house-floorplan-2f.jpg", alt: "間取り図（2F. 27m²）" },
   ],
   accessTitle: "📍 施設情報・アクセス",
   addressSectionTitle: "住所",

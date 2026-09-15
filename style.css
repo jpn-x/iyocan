@@ -1165,13 +1165,6 @@ body::before {
   margin-bottom: 6px;
 }
 
-.info-block-en {
-  font-size: 11.5px;
-  color: var(--ink-soft);
-  line-height: 1.5;
-  margin: 2px 0 0;
-}
-
 .info-block-link {
   display: block;
   text-align: center;
@@ -1196,9 +1189,36 @@ body::before {
   border-top: 1px solid rgba(74, 59, 59, 0.1);
 }
 
-.access-row:first-of-type {
+.access-row:first-of-type,
+.access-row-first {
   border-top: none;
   padding-top: 2px;
+}
+
+.address-copy-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink);
+  cursor: pointer;
+  text-align: left;
+}
+
+.address-copy-btn:active {
+  transform: scale(0.98);
+}
+
+.address-copy-icon {
+  font-size: 12px;
+  opacity: 0.55;
+  flex: none;
 }
 
 .access-row-main {
