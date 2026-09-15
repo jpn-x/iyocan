@@ -831,7 +831,7 @@ body::before {
   font-weight: 800;
   font-size: 15px;
   cursor: pointer;
-  box-shadow: 0 8px 18px rgba(16, 163, 127, 0.3);
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.55), 0 8px 18px rgba(16, 163, 127, 0.35);
   text-decoration: none;
   font-family: inherit;
 }
