@@ -38,6 +38,7 @@ function render() {
   if (parts[0] === "ehime" && parts[1]) return renderCategoryChips(parts[1]);
   if (parts[0] === "today") return renderTodayForm();
   if (parts[0] === "help") return renderHelp();
+  if (parts[0] === "contact") return renderContact();
   return renderHome();
 }
 
@@ -63,6 +64,7 @@ function footerNav(current) {
     { id: "house", emoji: "🏠", label: "いよ館の使い方", cls: "fn-house" },
     { id: "ehime", emoji: "🤖", label: "愛媛を楽しむ", cls: "fn-ehime" },
     { id: "help", emoji: "🆘", label: "困ったとき", cls: "fn-help" },
+    { id: "contact", emoji: "📞", label: "管理人に連絡", cls: "fn-contact" },
   ];
   return `
     <div class="footer-nav">
@@ -248,6 +250,7 @@ function renderEhimeGrid() {
           </button>`
         ).join("")}
       </div>
+      ${footerNav("ehime")}
     </div>
   `;
 }
@@ -379,6 +382,56 @@ function renderHelp() {
         ).join("")}
       </div>
       ${footerNav("help")}
+    </div>
+  `;
+}
+
+/* ---------- 📞 管理人に連絡 ---------- */
+function renderContact() {
+  const nameHtml = MANAGER.name
+    ? `<div class="contact-name">${MANAGER.name}</div>`
+    : `<div class="contact-name is-placeholder">✏️ 管理人の名前をここに追加できます</div>`;
+
+  const telHtml = MANAGER.tel
+    ? `<a class="cta-btn contact-tel-btn" href="tel:${MANAGER.tel}">📞 ${MANAGER.tel} に電話する</a>`
+    : `<div class="owner-note">✏️ ここに電話番号を追加できます</div>`;
+
+  const lineIdHtml = MANAGER.lineId
+    ? `<div class="line-id">LINE ID：<b>${MANAGER.lineId}</b></div>`
+    : `<div class="line-id is-placeholder">✏️ LINE IDをここに追加できます</div>`;
+
+  app.innerHTML = `
+    ${header({ back: "home", title: "管理人に連絡" })}
+    <div class="view">
+      <div class="contact-hero">
+        <img src="${MANAGER.photo}" alt="管理人" class="contact-photo" />
+        <p class="contact-message">${MANAGER.message}</p>
+      </div>
+
+      <div class="contact-card">
+        ${nameHtml}
+        ${telHtml}
+      </div>
+
+      <div class="section-title">💬 LINEで連絡する</div>
+      <div class="line-card">
+        ${lineIdHtml}
+        <img src="${MANAGER.lineQr}" alt="LINE QRコード" class="line-qr-img" />
+        <p class="line-hint">QRコードを読み取って友だち追加してね</p>
+      </div>
+
+      <div class="section-title">📎 書類・データのやり取り</div>
+      <p class="section-desc">${ISSHO_CARD.note}</p>
+      <a class="link-card" href="${ISSHO_CARD.url}" target="_blank" rel="noopener">
+        <img src="${ISSHO_CARD.image}" alt="${ISSHO_CARD.title}" class="link-card-img" />
+        <div class="link-card-body">
+          <div class="link-card-title">${ISSHO_CARD.title}</div>
+          <div class="link-card-desc">${ISSHO_CARD.description}</div>
+          <div class="link-card-url">🔗 issho.jreco.net</div>
+        </div>
+      </a>
+
+      ${footerNav("contact")}
     </div>
   `;
 }

@@ -253,3 +253,25 @@ const HELP_ITEMS = [
   hours: "",
   note: h.id === "emergency" ? "救急 119 ／ 警察 110" : "",
 }));
+
+/* ============================================================
+   5) 📞 管理人に連絡
+   name・tel・lineId は未入力（オーナーがここに追加できます）
+   ============================================================ */
+const MANAGER = {
+  photo: "assets/manager.png",
+  message: "困った時は、いつでも連絡してね🍊",
+  name: "",
+  tel: "",
+  lineId: "",
+  lineQr: "assets/line-qr.jpg",
+};
+
+const ISSHO_CARD = {
+  url: "https://issho.jreco.net/",
+  title: "いっしょに見る",
+  description: "書類・ファイルやりとりBOX",
+  note:
+    "メッセージアプリが入っていなくても、スマホのブラウザだけで書類・データのやり取りができるサイトです（動画のやり取りには非対応）。",
+  image: "assets/issho-card.jpg",
+};
