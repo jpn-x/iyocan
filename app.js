@@ -171,8 +171,17 @@ function renderHome() {
       </div>
 
       <div class="home-cards">
-        <button class="home-card main" onclick="navigate('house')">
+        <button class="home-card main" onclick="navigate('today')">
           <span class="card-badge">${STRINGS.home.mainBadge}</span>
+          <span class="card-emoji">${TODAY_PLAN.emoji}</span>
+          <span class="card-text">
+            <span class="card-title">${TODAY_PLAN.title}</span>
+            <span class="card-sub">${TODAY_PLAN.subtitle}</span>
+          </span>
+          <span class="card-arrow">›</span>
+        </button>
+
+        <button class="home-card house" onclick="navigate('house')">
           <span class="card-emoji">🏠</span>
           <span class="card-text">
             <span class="card-title">${STRINGS.home.houseTitle}</span>
@@ -181,7 +190,7 @@ function renderHome() {
           <span class="card-arrow">›</span>
         </button>
 
-        <button class="home-card house" onclick="navigate('ehime')">
+        <button class="home-card ehime" onclick="navigate('ehime')">
           <span class="card-emoji">🤖</span>
           <span class="card-text">
             <span class="card-title">${STRINGS.home.ehimeTitle}</span>
@@ -207,6 +216,16 @@ function renderHome() {
           </span>
           <span class="card-arrow">›</span>
         </button>
+      </div>
+
+      <div class="promo-card">
+        <div class="promo-title">${CHATGPT_PROMO.title}</div>
+        <p class="promo-lead">${CHATGPT_PROMO.lead}</p>
+        <p class="promo-note">${CHATGPT_PROMO.note}</p>
+        <div class="promo-actions">
+          <a class="promo-btn ios" href="${CHATGPT_PROMO.ios.url}" target="_blank" rel="noopener">${CHATGPT_PROMO.ios.label}</a>
+          <a class="promo-btn android" href="${CHATGPT_PROMO.android.url}" target="_blank" rel="noopener">${CHATGPT_PROMO.android.label}</a>
+        </div>
       </div>
 
       <p class="footer-note">${STRINGS.home.footerNote}</p>
