@@ -350,6 +350,7 @@ const CERTIFICATE = {
    ============================================================ */
 const STRINGS = {
   siteName: "IYOCAN GUIDE",
+  topLink: "Top",
   langSwitch: { label: "🇯🇵 日本語", href: "../" },
 
   home: {

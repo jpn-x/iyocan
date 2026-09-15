@@ -75,7 +75,7 @@ body::after {
 .top-header {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   padding: 16px 20px 10px;
   position: sticky;
   top: 0;
@@ -84,24 +84,29 @@ body::after {
   backdrop-filter: blur(6px);
 }
 
-.lang-switch {
-  margin-left: auto;
+.lang-switch,
+.top-link {
   flex: none;
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  padding: 7px 12px;
+  padding: 6px 10px;
   border-radius: 20px;
   background: var(--white);
   box-shadow: var(--shadow-soft);
   color: var(--ink);
   text-decoration: none;
-  font-size: 12.5px;
+  font-size: 11.5px;
   font-weight: 700;
   white-space: nowrap;
 }
 
-.lang-switch:active {
+.top-link {
+  margin-left: auto;
+}
+
+.lang-switch:active,
+.top-link:active {
   transform: scale(0.95);
 }
 

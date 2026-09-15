@@ -55,6 +55,7 @@ function header({ back = null, title = null } = {}) {
           ? `<a class="header-title" href="#home" onclick="event.preventDefault();navigate('home')">${title}</a>`
           : ""
       }
+      <a class="top-link" href="#home" onclick="event.preventDefault();navigate('home')">${STRINGS.topLink}</a>
       <a class="lang-switch" href="${STRINGS.langSwitch.href}">${STRINGS.langSwitch.label}</a>
     </div>
   `;

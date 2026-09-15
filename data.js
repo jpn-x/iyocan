@@ -348,6 +348,7 @@ const CERTIFICATE = {
    ============================================================ */
 const STRINGS = {
   siteName: "いよ館 GUIDE",
+  topLink: "トップ",
   langSwitch: { label: "🇬🇧 English", href: "en/" },
 
   home: {
