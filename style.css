@@ -1277,6 +1277,74 @@ body::before {
   font-weight: 800;
 }
 
+/* ---------- 困ったとき：その他の緊急連絡先（控えめなアコーディオン） ---------- */
+.emergency-more {
+  background: var(--cream);
+  border: 1px solid rgba(74, 59, 59, 0.12);
+  border-radius: var(--radius-md);
+  padding: 4px 14px;
+  margin-bottom: 20px;
+}
+
+.emergency-more-summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 10px 2px;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--ink-soft);
+}
+
+.emergency-more-summary::-webkit-details-marker {
+  display: none;
+}
+
+.emergency-more-body {
+  padding: 2px 2px 12px;
+}
+
+.emergency-sub-title {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--ink-soft);
+  margin: 10px 0 6px;
+}
+
+.emergency-sub-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.emergency-sub-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  background: var(--white);
+  border-radius: var(--radius-sm);
+  padding: 9px 12px;
+  text-decoration: none;
+  color: var(--ink);
+}
+
+.emergency-sub-item:active {
+  transform: scale(0.98);
+}
+
+.emergency-sub-label {
+  font-size: 12.5px;
+  font-weight: 700;
+  min-width: 0;
+}
+
+.emergency-sub-num {
+  font-size: 12.5px;
+  font-weight: 800;
+  color: var(--orange);
+  flex: none;
+}
+
 .sos-chip-main {
   display: flex;
   align-items: center;

@@ -590,6 +590,18 @@ const STRINGS = {
     emergencyTitle: "🚨 本当に緊急のときは",
     emergencyAmbulance: "救急・消防",
     emergencyPolice: "警察",
+    moreContactsLabel: "📖 その他の緊急連絡先を見る",
+    localContactsTitle: "🏢 地元の警察・消防",
+    localContacts: [
+      { emoji: "🚓", label: "伊予警察署", tel: "089-982-0110" },
+      { emoji: "🚒", label: "伊予消防署", tel: "089-982-0119" },
+    ],
+    consultTitle: "☎️ 110/119を呼ぶか迷ったら",
+    consultLines: [
+      { emoji: "🚑", label: "救急車を呼ぶか迷ったら（24時間）", tel: "#7119" },
+      { emoji: "👶", label: "子どもの急病・ケガ相談（夜間休日）", tel: "#8000" },
+      { emoji: "👮", label: "緊急ではない警察への相談", tel: "#9110" },
+    ],
   },
 
   contact: {

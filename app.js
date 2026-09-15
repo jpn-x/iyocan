@@ -631,6 +631,41 @@ function renderHelp() {
         </div>
       </div>
 
+      ${
+        STRINGS.help.localContacts
+          ? `
+      <details class="emergency-more">
+        <summary class="emergency-more-summary">${STRINGS.help.moreContactsLabel}</summary>
+        <div class="emergency-more-body">
+          <div class="emergency-sub-title">${STRINGS.help.localContactsTitle}</div>
+          <div class="emergency-sub-list">
+            ${STRINGS.help.localContacts
+              .map(
+                (c) => `
+              <a class="emergency-sub-item" href="tel:${c.tel}">
+                <span class="emergency-sub-label">${c.emoji} ${c.label}</span>
+                <span class="emergency-sub-num">${c.tel}</span>
+              </a>`
+              )
+              .join("")}
+          </div>
+          <div class="emergency-sub-title">${STRINGS.help.consultTitle}</div>
+          <div class="emergency-sub-list">
+            ${STRINGS.help.consultLines
+              .map(
+                (c) => `
+              <a class="emergency-sub-item" href="tel:${c.tel}">
+                <span class="emergency-sub-label">${c.emoji} ${c.label}</span>
+                <span class="emergency-sub-num">${c.tel}</span>
+              </a>`
+              )
+              .join("")}
+          </div>
+        </div>
+      </details>`
+          : ""
+      }
+
       <div class="chip-list">
         ${HELP_ITEMS.map(
           (h) => `

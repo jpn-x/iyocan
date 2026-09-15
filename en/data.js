@@ -570,6 +570,18 @@ const STRINGS = {
     emergencyTitle: "🚨 In a real emergency",
     emergencyAmbulance: "Ambulance / Fire",
     emergencyPolice: "Police",
+    moreContactsLabel: "📖 More emergency contacts",
+    localContactsTitle: "🏢 Local Police & Fire Station",
+    localContacts: [
+      { emoji: "🚓", label: "Iyo Police Station", tel: "089-982-0110" },
+      { emoji: "🚒", label: "Iyo Fire Station", tel: "089-982-0119" },
+    ],
+    consultTitle: "☎️ Not sure whether to call 110/119?",
+    consultLines: [
+      { emoji: "🚑", label: "Not sure if you need an ambulance? (24h)", tel: "#7119" },
+      { emoji: "👶", label: "Child illness/injury advice (nights & holidays)", tel: "#8000" },
+      { emoji: "👮", label: "Non-emergency police consultation", tel: "#9110" },
+    ],
   },
 
   contact: {
