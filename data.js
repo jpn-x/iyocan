@@ -263,6 +263,7 @@ const MANAGER = {
   name: "村上 直樹（むらかみ なおき）",
   tel: "090-5044-7799",
   lineId: "murakaminaoki",
+  lineUrl: "https://line.me/ti/p/Fu0w0Dlruk",
   lineQr: "assets/line-qr.jpg",
   sns: [
     { id: "x", emoji: "𝕏", label: "@cadillac600", url: "https://x.com/cadillac600" },
@@ -275,6 +276,92 @@ const ISSHO_CARD = {
   title: "いっしょに見る",
   description: "書類・ファイルやりとりBOX",
   note:
-    "メッセージアプリが入っていなくても、スマホのブラウザだけで書類・データのやり取りができるサイトです（動画のやり取りには非対応）。",
+    "📱 LINEを使っていない方へ<br/>アプリ不要。ブラウザだけで写真・書類・メッセージを送れます。",
   image: "assets/issho-card.jpg",
+};
+
+/* ============================================================
+   6) 画面まわりの共通文言（日本語版）
+   app.js はこの STRINGS を参照するだけで、日英で完全に共有できます。
+   ============================================================ */
+const STRINGS = {
+  siteName: "いよ館 GUIDE",
+  langSwitch: { label: "🇬🇧 English", href: "en/" },
+
+  home: {
+    title: "いよ館 GUIDE",
+    subtitle: "愛媛の旅、楽しもう！",
+    mainBadge: "メイン",
+    houseTitle: "いよ館の使い方",
+    houseSub: "宿のことはこちら",
+    ehimeTitle: "愛媛を楽しむ",
+    ehimeSub: "気になることをAIに聞いてみよう！",
+    helpTitle: "困ったとき",
+    helpSub: "病院・薬局・交通など",
+    contactTitle: "管理人に連絡",
+    contactSub: "村上直樹に連絡してみる",
+    footerNote: "QRコードからこのページを開いたあなたへ 🍊",
+  },
+
+  house: {
+    pageTitle: "いよ館の使い方",
+    heroTitle: "宿のことはこちら",
+    heroSub: "気になる項目をタップしてね",
+    photoPlaceholder: "📷 ここに写真を追加してください",
+    ownerNote: "✏️ ここにオーナーが説明文・写真・注意点を追加できます",
+  },
+
+  ehime: {
+    pageTitle: "愛媛を楽しむ",
+    heroTitle: "愛媛、何しよう？",
+    heroSub: "気になること、聞いてみよう。",
+    categoryHeading: "カテゴリーから選ぶ",
+  },
+
+  chips: {
+    copyTitle: "質問をコピー",
+    footerNote: "タップすると ChatGPT が開きます。📋でコピーもできます。",
+  },
+
+  today: {
+    ctaLabel: "💬 この条件でAIに相談する",
+  },
+
+  help: {
+    pageTitle: "困ったとき",
+    heroTitle: "困ったときはこちら",
+    heroSub: "タップすると詳しく開きます",
+    ownerPlaceholder: "✏️ 住所・電話番号・営業時間はオーナーがここに追加できます",
+    mapLabel: "📍 地図で見る",
+    aiLabel: "🤖 AIに聞く",
+    aiPrompt: (title) =>
+      `${LOCATION_CONTEXT}今から一番近い${title}を教えてください。距離・営業時間も分かる範囲で教えてください。`,
+  },
+
+  contact: {
+    pageTitle: "管理人に連絡",
+    namePlaceholder: "✏️ 管理人の名前をここに追加できます",
+    telLabel: (tel) => `📞 ${tel} に電話する`,
+    telPlaceholder: "✏️ ここに電話番号を追加できます",
+    lineIdText: (id) => `LINE ID：<b>${id}</b>`,
+    lineIdPlaceholder: "✏️ LINE IDをここに追加できます",
+    lineSectionTitle: "💬 LINEで連絡する",
+    lineCtaLabel: "💬 LINEで連絡する",
+    lineHint: "📱 別のスマホやPCから読み取る場合はこちら",
+    docSectionTitle: "📎 書類・データのやり取り",
+    altManager: "管理人",
+    altLineQr: "LINE QRコード",
+  },
+
+  nav: {
+    house: "いよ館の使い方",
+    ehime: "愛媛を楽しむ",
+    help: "困ったとき",
+    contact: "管理人に連絡",
+  },
+
+  toast: {
+    copied: "質問をコピーしました📋",
+    copyFailed: "コピーできませんでした",
+  },
 };

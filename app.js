@@ -1,9 +1,9 @@
 /* ============================================================
    いよ館 GUIDE - アプリ本体（ルーティング & 描画）
+   日本語版・英語版で完全共有。文言は data.js の STRINGS / 各データに集約。
    ============================================================ */
 
 const app = document.getElementById("app");
-const CATEGORY_COLOR = { pink: "pink", orange: "orange", blue: "blue", yellow: "yellow" };
 
 const todayAnswers = {
   time: TODAY_PLAN.fields[0].options[1],
@@ -48,23 +48,24 @@ function header({ back = null, title = null } = {}) {
     <div class="top-header">
       ${back ? `<button class="back-btn" onclick="navigate('${back}')">←</button>` : ""}
       <a class="logo-link" href="#home" onclick="event.preventDefault();navigate('home')">
-        <span class="logo-emoji">🍊</span>${title ? "" : "いよ館 GUIDE"}
+        <span class="logo-emoji">🍊</span>${title ? "" : STRINGS.siteName}
       </a>
       ${
         title
           ? `<a class="header-title" href="#home" onclick="event.preventDefault();navigate('home')">${title}</a>`
           : ""
       }
+      <a class="lang-switch" href="${STRINGS.langSwitch.href}">${STRINGS.langSwitch.label}</a>
     </div>
   `;
 }
 
 function footerNav(current) {
   const items = [
-    { id: "house", emoji: "🏠", label: "いよ館の使い方", cls: "fn-house" },
-    { id: "ehime", emoji: "🤖", label: "愛媛を楽しむ", cls: "fn-ehime" },
-    { id: "help", emoji: "🆘", label: "困ったとき", cls: "fn-help" },
-    { id: "contact", emoji: "📞", label: "管理人に連絡", cls: "fn-contact" },
+    { id: "house", emoji: "🏠", label: STRINGS.nav.house, cls: "fn-house" },
+    { id: "ehime", emoji: "🤖", label: STRINGS.nav.ehime, cls: "fn-ehime" },
+    { id: "help", emoji: "🆘", label: STRINGS.nav.help, cls: "fn-help" },
+    { id: "contact", emoji: "📞", label: STRINGS.nav.contact, cls: "fn-contact" },
   ];
   return `
     <div class="footer-nav">
@@ -101,7 +102,7 @@ function openChatGPT(prompt) {
 
 function copyText(text, btnEl) {
   const done = () => {
-    toast("質問をコピーしました📋");
+    toast(STRINGS.toast.copied);
     if (btnEl) {
       btnEl.classList.add("copied");
       setTimeout(() => btnEl.classList.remove("copied"), 1200);
@@ -125,7 +126,7 @@ function fallbackCopy(text, done) {
     document.execCommand("copy");
     done();
   } catch (e) {
-    toast("コピーできませんでした");
+    toast(STRINGS.toast.copyFailed);
   }
   document.body.removeChild(ta);
 }
@@ -137,17 +138,17 @@ function renderHome() {
     <div class="view">
       <div class="hero">
         <span class="hero-emoji">🍊</span>
-        <h1>いよ館 GUIDE</h1>
-        <p>愛媛の旅、楽しもう！</p>
+        <h1>${STRINGS.home.title}</h1>
+        <p>${STRINGS.home.subtitle}</p>
       </div>
 
       <div class="home-cards">
         <button class="home-card main" onclick="navigate('house')">
-          <span class="card-badge">メイン</span>
+          <span class="card-badge">${STRINGS.home.mainBadge}</span>
           <span class="card-emoji">🏠</span>
           <span class="card-text">
-            <span class="card-title">いよ館の使い方</span>
-            <span class="card-sub">宿のことはこちら</span>
+            <span class="card-title">${STRINGS.home.houseTitle}</span>
+            <span class="card-sub">${STRINGS.home.houseSub}</span>
           </span>
           <span class="card-arrow">›</span>
         </button>
@@ -155,8 +156,8 @@ function renderHome() {
         <button class="home-card house" onclick="navigate('ehime')">
           <span class="card-emoji">🤖</span>
           <span class="card-text">
-            <span class="card-title">愛媛を楽しむ</span>
-            <span class="card-sub">気になることをAIに聞いてみよう！</span>
+            <span class="card-title">${STRINGS.home.ehimeTitle}</span>
+            <span class="card-sub">${STRINGS.home.ehimeSub}</span>
           </span>
           <span class="card-arrow">›</span>
         </button>
@@ -164,8 +165,8 @@ function renderHome() {
         <button class="home-card help" onclick="navigate('help')">
           <span class="card-emoji">🆘</span>
           <span class="card-text">
-            <span class="card-title">困ったとき</span>
-            <span class="card-sub">病院・薬局・交通など</span>
+            <span class="card-title">${STRINGS.home.helpTitle}</span>
+            <span class="card-sub">${STRINGS.home.helpSub}</span>
           </span>
           <span class="card-arrow">›</span>
         </button>
@@ -173,14 +174,14 @@ function renderHome() {
         <button class="home-card contact" onclick="navigate('contact')">
           <span class="card-emoji">📞</span>
           <span class="card-text">
-            <span class="card-title">管理人に連絡</span>
-            <span class="card-sub">村上直樹に連絡してみる</span>
+            <span class="card-title">${STRINGS.home.contactTitle}</span>
+            <span class="card-sub">${STRINGS.home.contactSub}</span>
           </span>
           <span class="card-arrow">›</span>
         </button>
       </div>
 
-      <p class="footer-note">QRコードからこのページを開いたあなたへ 🍊</p>
+      <p class="footer-note">${STRINGS.home.footerNote}</p>
     </div>
   `;
 }
@@ -188,13 +189,13 @@ function renderHome() {
 /* ---------- 🏠 いよ館の使い方 ---------- */
 function renderHouseList() {
   app.innerHTML = `
-    ${header({ back: "home", title: "いよ館の使い方" })}
+    ${header({ back: "home", title: STRINGS.house.pageTitle })}
     <div class="view">
       ${footerNav("house")}
       <div class="hero" style="padding-top:6px;">
         <span class="hero-emoji">🏠</span>
-        <h1 style="font-size:20px;">宿のことはこちら</h1>
-        <p>気になる項目をタップしてね</p>
+        <h1 style="font-size:20px;">${STRINGS.house.heroTitle}</h1>
+        <p>${STRINGS.house.heroSub}</p>
       </div>
       <div class="grid-2">
         ${FACILITIES.map(
@@ -216,7 +217,7 @@ function renderHouseDetail(id) {
   app.innerHTML = `
     ${header({ back: "house", title: f.title })}
     <div class="view">
-      <div class="detail-photo">📷 ここに写真を追加してください</div>
+      <div class="detail-photo">${STRINGS.house.photoPlaceholder}</div>
       <ol class="step-list" style="list-style:none;padding:0;">
         ${f.steps
           .map(
@@ -225,7 +226,7 @@ function renderHouseDetail(id) {
           )
           .join("")}
       </ol>
-      <div class="owner-note">✏️ ここにオーナーが説明文・写真・注意点を追加できます</div>
+      <div class="owner-note">${STRINGS.house.ownerNote}</div>
     </div>
   `;
 }
@@ -233,13 +234,13 @@ function renderHouseDetail(id) {
 /* ---------- 🤖 愛媛を楽しむ ---------- */
 function renderEhimeGrid() {
   app.innerHTML = `
-    ${header({ back: "home", title: "愛媛を楽しむ" })}
+    ${header({ back: "home", title: STRINGS.ehime.pageTitle })}
     <div class="view">
       ${footerNav("ehime")}
       <div class="hero" style="padding-top:6px;">
         <span class="hero-emoji">🤖</span>
-        <h1 style="font-size:20px;">愛媛、何しよう？</h1>
-        <p>気になること、聞いてみよう。</p>
+        <h1 style="font-size:20px;">${STRINGS.ehime.heroTitle}</h1>
+        <p>${STRINGS.ehime.heroSub}</p>
       </div>
 
       <button class="today-card" onclick="navigate('today')">
@@ -251,7 +252,7 @@ function renderEhimeGrid() {
         <span class="card-arrow" style="margin-left:auto;">›</span>
       </button>
 
-      <div class="section-title">カテゴリーから選ぶ</div>
+      <div class="section-title">${STRINGS.ehime.categoryHeading}</div>
       <div class="grid-2">
         ${CATEGORIES.map(
           (c) => `
@@ -284,12 +285,12 @@ function renderCategoryChips(catId) {
             (q, i) => `
           <div class="chip-card">
             <button class="chip-main" onclick='sendToChatGPT(${JSON.stringify(q.prompt)})'>${q.label}</button>
-            <button class="chip-copy" title="質問をコピー" onclick='copyText(${JSON.stringify(q.prompt)}, this)'>📋</button>
+            <button class="chip-copy" title="${STRINGS.chips.copyTitle}" onclick='copyText(${JSON.stringify(q.prompt)}, this)'>📋</button>
           </div>`
           )
           .join("")}
       </div>
-      <p class="footer-note">タップすると ChatGPT が開きます。📋でコピーもできます。</p>
+      <p class="footer-note">${STRINGS.chips.footerNote}</p>
     </div>
   `;
 }
@@ -328,7 +329,7 @@ function renderTodayForm() {
         .join("")}
 
       <div class="sticky-cta">
-        <button class="cta-btn" onclick="submitTodayForm()">💬 この条件でAIに相談する</button>
+        <button class="cta-btn" onclick="submitTodayForm()">${STRINGS.today.ctaLabel}</button>
       </div>
     </div>
   `;
@@ -349,13 +350,13 @@ function submitTodayForm() {
 /* ---------- 🆘 困ったとき ---------- */
 function renderHelp() {
   app.innerHTML = `
-    ${header({ back: "home", title: "困ったとき" })}
+    ${header({ back: "home", title: STRINGS.help.pageTitle })}
     <div class="view">
       ${footerNav("help")}
       <div class="hero" style="padding-top:6px;">
         <span class="hero-emoji">🆘</span>
-        <h1 style="font-size:20px;">困ったときはこちら</h1>
-        <p>タップすると詳しく開きます</p>
+        <h1 style="font-size:20px;">${STRINGS.help.heroTitle}</h1>
+        <p>${STRINGS.help.heroSub}</p>
       </div>
 
       <div class="help-list">
@@ -371,21 +372,21 @@ function renderHelp() {
               ${
                 h.note
                   ? `<div class="help-note">${h.note}</div>`
-                  : `<div class="help-note">✏️ 住所・電話番号・営業時間はオーナーがここに追加できます</div>`
+                  : `<div class="help-note">${STRINGS.help.ownerPlaceholder}</div>`
               }
               <div class="help-actions">
                 ${
                   h.mapQuery
                     ? `<a class="pill-btn map" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
                         h.mapQuery
-                      )}">📍 地図で見る</a>`
+                      )}">${STRINGS.help.mapLabel}</a>`
                     : ""
                 }
                 ${
                   h.id !== "emergency"
                     ? `<button class="pill-btn ai" onclick='sendToChatGPT(${JSON.stringify(
-                        `${LOCATION_CONTEXT}今から一番近い${h.title}を教えてください。距離・営業時間も分かる範囲で教えてください。`
-                      )})'>🤖 AIに聞く</button>`
+                        STRINGS.help.aiPrompt(h.title)
+                      )})'>${STRINGS.help.aiLabel}</button>`
                     : ""
                 }
               </div>
@@ -402,22 +403,26 @@ function renderHelp() {
 function renderContact() {
   const nameHtml = MANAGER.name
     ? `<div class="contact-name">${MANAGER.name}</div>`
-    : `<div class="contact-name is-placeholder">✏️ 管理人の名前をここに追加できます</div>`;
+    : `<div class="contact-name is-placeholder">${STRINGS.contact.namePlaceholder}</div>`;
 
   const telHtml = MANAGER.tel
-    ? `<a class="cta-btn contact-tel-btn" href="tel:${MANAGER.tel}">📞 ${MANAGER.tel} に電話する</a>`
-    : `<div class="owner-note">✏️ ここに電話番号を追加できます</div>`;
+    ? `<a class="cta-btn contact-tel-btn" href="tel:${MANAGER.tel}">${STRINGS.contact.telLabel(MANAGER.tel)}</a>`
+    : `<div class="owner-note">${STRINGS.contact.telPlaceholder}</div>`;
 
   const lineIdHtml = MANAGER.lineId
-    ? `<div class="line-id">LINE ID：<b>${MANAGER.lineId}</b></div>`
-    : `<div class="line-id is-placeholder">✏️ LINE IDをここに追加できます</div>`;
+    ? `<div class="line-id">${STRINGS.contact.lineIdText(MANAGER.lineId)}</div>`
+    : `<div class="line-id is-placeholder">${STRINGS.contact.lineIdPlaceholder}</div>`;
+
+  const lineCtaHtml = MANAGER.lineUrl
+    ? `<a class="cta-btn line-cta-btn" href="${MANAGER.lineUrl}" target="_blank" rel="noopener">${STRINGS.contact.lineCtaLabel}</a>`
+    : "";
 
   app.innerHTML = `
-    ${header({ back: "home", title: "管理人に連絡" })}
+    ${header({ back: "home", title: STRINGS.contact.pageTitle })}
     <div class="view">
       ${footerNav("contact")}
       <div class="contact-hero">
-        <img src="${MANAGER.photo}" alt="管理人" class="contact-photo" />
+        <img src="${MANAGER.photo}" alt="${STRINGS.contact.altManager}" class="contact-photo" />
         <p class="contact-message">${MANAGER.message}</p>
       </div>
 
@@ -441,14 +446,17 @@ function renderContact() {
         }
       </div>
 
-      <div class="section-title">💬 LINEで連絡する</div>
+      <div class="section-title">${STRINGS.contact.lineSectionTitle}</div>
       <div class="line-card">
+        ${lineCtaHtml}
         ${lineIdHtml}
-        <img src="${MANAGER.lineQr}" alt="LINE QRコード" class="line-qr-img" />
-        <p class="line-hint">QRコードを読み取って友だち追加してね</p>
+        <div class="qr-secondary">
+          <p class="line-hint">${STRINGS.contact.lineHint}</p>
+          <img src="${MANAGER.lineQr}" alt="${STRINGS.contact.altLineQr}" class="line-qr-img is-secondary" />
+        </div>
       </div>
 
-      <div class="section-title">📎 書類・データのやり取り</div>
+      <div class="section-title">${STRINGS.contact.docSectionTitle}</div>
       <p class="section-desc">${ISSHO_CARD.note}</p>
       <a class="link-card" href="${ISSHO_CARD.url}" target="_blank" rel="noopener">
         <img src="${ISSHO_CARD.image}" alt="${ISSHO_CARD.title}" class="link-card-img" />
