@@ -376,7 +376,7 @@ const STRINGS = {
     title: "IYOCAN GUIDE",
     subtitle: "Welcome! What would you like to do?",
     mainBadge: "Start Here",
-    qlPromo: "🤖 Unlock Full Power",
+    qlPromo: "🤖 Unlock Full Power with AI",
     qlWifi: "📶 Connect Wi-Fi",
     houseTitle: "How to Use IYOCAN",
     houseSub: "Everything about your stay",

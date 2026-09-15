@@ -101,9 +101,36 @@ function openChatGPT(prompt) {
   window.open(url, "_blank", "noopener");
 }
 
-function scrollToPromo() {
-  const el = document.querySelector(".promo-card");
-  if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+function getPromoModal() {
+  let m = document.querySelector(".promo-modal");
+  if (!m) {
+    m = document.createElement("div");
+    m.className = "promo-modal";
+    m.innerHTML = `
+      <div class="promo-modal-card">
+        <div class="promo-title">${CHATGPT_PROMO.title}</div>
+        <p class="promo-lead">${CHATGPT_PROMO.lead}</p>
+        <p class="promo-note">${CHATGPT_PROMO.note}</p>
+        <div class="promo-actions">
+          <a class="promo-btn ios" href="${CHATGPT_PROMO.ios.url}" target="_blank" rel="noopener">${CHATGPT_PROMO.ios.label}</a>
+          <a class="promo-btn android" href="${CHATGPT_PROMO.android.url}" target="_blank" rel="noopener">${CHATGPT_PROMO.android.label}</a>
+        </div>
+      </div>
+    `;
+    m.addEventListener("click", () => closePromoModal());
+    document.body.appendChild(m);
+  }
+  return m;
+}
+
+function openPromoModal() {
+  const m = getPromoModal();
+  m.classList.add("show");
+}
+
+function closePromoModal() {
+  const m = document.querySelector(".promo-modal");
+  if (m) m.classList.remove("show");
 }
 
 function getLightbox() {
@@ -176,7 +203,7 @@ function renderHome() {
       </div>
 
       <div class="quick-links-row">
-        <button class="quick-link-btn ql-promo" onclick="scrollToPromo()">${STRINGS.home.qlPromo}</button>
+        <button class="quick-link-btn ql-promo" onclick="openPromoModal()">${STRINGS.home.qlPromo}</button>
         <button class="quick-link-btn ql-wifi" onclick="navigate('house/wifi')">${STRINGS.home.qlWifi}</button>
       </div>
 
