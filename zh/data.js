@@ -368,6 +368,8 @@ const LANG_OPTIONS = [
   { code: "ja", flag: "🇯🇵", label: "日本語", href: "../", current: false },
   { code: "en", flag: "🇬🇧", label: "English", href: "../en/", current: false },
   { code: "zh", flag: "🇨🇳", label: "中文", href: "./", current: true },
+  { code: "th", flag: "🇹🇭", label: "ไทย", href: "../th/", current: false },
+  { code: "ko", flag: "🇰🇷", label: "한국어", href: "../ko/", current: false },
 ];
 
 /* ============================================================

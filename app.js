@@ -6,12 +6,12 @@
 const app = document.getElementById("app");
 
 const todayAnswers = {
-  time: TODAY_PLAN.fields[0].options[1],
+  time: TODAY_PLAN.fields[0].options[0],
   weather: TODAY_PLAN.fields[1].options[0],
-  with: TODAY_PLAN.fields[2].options[2],
+  with: TODAY_PLAN.fields[2].options[0],
   car: TODAY_PLAN.fields[3].options[0],
-  hours: TODAY_PLAN.fields[4].options[1],
-  food: TODAY_PLAN.fields[5].options[4],
+  hours: TODAY_PLAN.fields[4].options[0],
+  food: TODAY_PLAN.fields[5].options[0],
 };
 
 /* ---------- ルーティング ---------- */

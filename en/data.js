@@ -371,6 +371,8 @@ const LANG_OPTIONS = [
   { code: "ja", flag: "🇯🇵", label: "日本語", href: "../", current: false },
   { code: "en", flag: "🇬🇧", label: "English", href: "./", current: true },
   { code: "zh", flag: "🇨🇳", label: "中文", href: "../zh/", current: false },
+  { code: "th", flag: "🇹🇭", label: "ไทย", href: "../th/", current: false },
+  { code: "ko", flag: "🇰🇷", label: "한국어", href: "../ko/", current: false },
 ];
 
 const STRINGS = {
