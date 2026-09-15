@@ -271,7 +271,7 @@ function renderHome() {
     ${header()}
     <div class="view">
       <div class="hero">
-        <img class="hero-icon" src="${HOME_HERO_ICON}" alt="IYOCAN" />
+        <img class="hero-icon" src="${HOME_HERO_ICON}" alt="IYOCAN" ${typeof FACILITY_INFO !== "undefined" ? `onclick="openFacilityModal()"` : ""} />
         <h1>${STRINGS.home.title}</h1>
         <p>${STRINGS.home.subtitle}</p>
       </div>
