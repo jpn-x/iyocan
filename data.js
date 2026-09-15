@@ -500,6 +500,7 @@ const FACILITY_INFO = {
   mapsLabel: "📍 Google Mapsで見る",
   instagramUrl: "https://www.instagram.com/iiyo_can/",
   instagramLabel: "📷 Instagram",
+  houseInfoLabel: "🏠 お宿の詳しい施設情報を見る",
   tel: "090-5044-7799",
   managerLabel: "責任者",
   managerName: "村上 直樹",
